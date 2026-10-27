@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAIE • [W▲!Ξ] Creatieve App & Game Studio | Maker van Gutzy & Plinkzy</title>
+  <meta name="description" content="WAIE is een onafhankelijke app & game studio uit België. Wij bouwen speelse, doordachte mobiele apps en arcade games zoals Gutzy en Plinkzy.">
+  <link rel="icon" type="image/svg+xml" href="assets/waie_flat_symbol.svg">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://waie.be/">
+  <meta property="og:title" content="WAIE • [W▲!Ξ] Creatieve App & Game Studio">
+  <meta property="og:description" content="Doordachte mobiele apps en 90s arcade games met vakmanschap en respect voor privacy. Maker van Gutzy & Plinkzy.">
+  <meta property="og:image" content="https://waie.be/assets/plinkzy_banner.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Righteous&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Interactive & Motion CSS -->
+  <link rel="stylesheet" href="assets/interactive.css">
+
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F1F5F9;
+      --border: #E2E8F0;
+      --border-dark: #0F172A;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --accent-yellow: #FFD13B;
+      --accent-pink: #FF6584;
+      --accent-mint: #10B981;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(79, 70, 229, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(16, 185, 129, 0.04) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER & NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    /* FLAT GRAPHIC W ▲ ! Ξ LOGO LOCKUP */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge-flat {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #0F172A;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .logo:hover .logo-badge-flat {
+      transform: scale(1.05) rotate(-2deg);
+      background: #1E293B;
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-glyphs {
+      font-family: 'Righteous', 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #0F172A;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo-sub {
+      font-family: 'Space Grotesk', monospace, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .nav-btn {
+      background: #0F172A;
+      color: #FFFFFF !important;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700 !important;
+      font-size: 13.5px !important;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      background: #1E293B;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 0 50px;
+      text-align: center;
+    }
+
+    .hero-badge-symbol {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-symbol-card {
+      background: #FFFFFF;
+      border: 2px solid #0F172A;
+      border-radius: 24px;
+      padding: 12px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 4px 4px 0px #0F172A;
+      transition: transform 0.2s ease;
+    }
+
+    .hero-symbol-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #0F172A;
+    }
+
+    .hero-glyphs-lg {
+      font-family: 'Righteous', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #0F172A;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: #4F46E5;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #0F172A;
+    }
+
+    .hero h1 .highlight {
+      color: #4F46E5;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
+      transition: transform 0.2s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #1E293B;
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-subtle);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+
+    .btn-playstore {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #FFFFFF;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-playstore:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+    }
+
+    /* FEATURED SPOTLIGHT: GUTZY */
+    .section-title {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4F46E5;
+      margin-bottom: 8px;
+    }
+
+    .section-headline {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 32px;
+      color: #0F172A;
+    }
+
+    .featured-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border);
+      border-radius: 28px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFD13B;
+      color: #0F172A;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      border: 1.5px solid #0F172A;
+    }
+
+    .app-title-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .app-icon-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+      border: 2.5px solid #FFD13B;
+    }
+
+    .app-heading {
+      font-family: 'Righteous', cursive;
+      font-size: 38px;
+      color: #0F172A;
+      letter-spacing: 1px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .app-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .app-description {
+      font-size: 16px;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0F172A;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 12px;
+    }
+
+    .featured-banner-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+
+    .featured-banner-wrapper:hover {
+      transform: scale(1.02);
+    }
+
+    .featured-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* SCREENSHOTS SHOWCASE (LIGHT THEME) */
+    .screenshots-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #CBD5E1 transparent;
+      margin-top: 28px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+
+    .screenshot-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 6px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: #0F172A;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 8px 4px 4px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    /* PILLARS / PHILOSOPHY */
+    .pillars-section {
+      padding: 80px 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 34px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: #CBD5E1;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pillar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border);
+    }
+
+    .pillar-card h3 {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #0F172A;
+    }
+
+    .pillar-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPANY & LEGAL VERIFICATION (LIGHT THEME) */
+    .company-section {
+      padding: 60px 0 90px;
+    }
+
+    .company-box {
+      background: #FFFFFF;
+      border: 2px solid var(--border);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+    }
+
+    .company-info h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #0F172A;
+    }
+
+    .company-info p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .legal-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .legal-table td {
+      padding: 12px 0;
+    }
+
+    .legal-table td.label {
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 40%;
+    }
+
+    .legal-table td.value {
+      color: #0F172A;
+      font-weight: 800;
+    }
+
+    .contact-card {
+      background: var(--bg-card-subtle);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-card h4 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0F172A;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .contact-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4F46E5;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      background: #FFFFFF;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .footer-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .featured-card { grid-template-columns: 1fr; padding: 28px; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .company-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 34px; }
+      .nav-links { display: none; }
+      .screenshot-card { flex: 0 0 190px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <div class="logo-badge-flat">
+          <!-- Mini Flat W▲!Ξ Symbol -->
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none">
+            <path d="M 6 12 L 12 28 L 16 16 L 20 28 L 26 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="33,12 28,24 38,24" fill="#FFD13B"/>
+            <rect x="14" y="32" width="2.5" height="5" rx="1" fill="#10B981"/>
+            <circle cx="15.25" cy="39" r="1.2" fill="#10B981"/>
+            <line x1="26" y1="32" x2="36" y2="32" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="35.5" x2="36" y2="35.5" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="39" x2="36" y2="39" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <div class="logo-glyphs">
+            <span>W</span><span style="color:#FFD13B;">▲</span><span style="color:#4F46E5;">!</span><span style="color:#10B981;">Ξ</span>
+          </div>
+          <span class="logo-sub">[STUDIO]</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#plinkzy">Plinkzy</a>
+        <a href="#gutzy">Gutzy</a>
+        <a href="#demo-ritueel">Live Demo's</a>
+        <a href="#organisatie">Over Ons</a>
+        <a href="/privacy.html">Privacy</a>
+        
+        <!-- Language Switcher to EN -->
+        <a href="/en/" class="lang-switch-btn" title="Switch to English">
+          <span class="lang-switch-flag">🇬🇧</span>
+          <span class="lang-switch-code">EN</span>
+        </a>
+
+        <a href="mailto:info@waie.be" class="nav-btn">Contact Opnemen</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ASYMMETRIC 2-COLUMN STUDIO HERO INTRO -->
+  <section class="hero-split">
+    <div class="container">
+      <div class="hero-split-grid">
+        
+        <!-- LEFT COLUMN: EDITORIAL STUDIO INTRO -->
+        <div class="hero-intro-col">
+          <div class="hero-eyebrow-row">
+            <div class="hero-studio-chip tilt-card" title="Klik op de symbolen voor interactie!">
+              <span class="hero-glyphs-sm hero-glyphs-interactive">
+                <span class="interactive-glyph glyph-w" title="W • Waie">W</span><span class="interactive-glyph glyph-triangle" style="color:#FFD13B;" title="▲ • Piramide / Focus">▲</span><span class="interactive-glyph glyph-exclamation" style="color:#4F46E5;" title="! • Impuls / Intuïtie">!</span><span class="interactive-glyph glyph-xi" title="Ξ • Equalizer / Balans"><span></span><span></span><span></span></span>
+              </span>
+              <span style="font-family:'Space Grotesk', monospace; font-size: 10.5px; font-weight: 800; background:#0F172A; color:#FFFFFF; padding: 3px 8px; border-radius: 6px; letter-spacing: 1.2px;">
+                STUDIO LAB
+              </span>
+            </div>
+
+            <div class="hero-live-pill">
+              <span class="live-pulse-dot"></span>
+              <span>BELGIË • 2 RELEASES LIVE</span>
+            </div>
+          </div>
+
+          <h1>
+            Speelse mobiele apps &amp; <span class="highlight-neon">arcade games</span> met <span class="highlight-indigo">eigen karakter.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Welkom bij <strong>WAIE</strong>, onze onafhankelijke creatieve app &amp; game studio. Wij combineren tastbare 90s retro-physics, psychologie en privacy-vriendelijk design in apps en games die direct goed aanvoelen.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#plinkzy" class="btn-primary">
+              <span>🕹️</span> Ontdek Plinkzy (Nieuw!)
+            </a>
+            <a href="#gutzy" class="btn-secondary">
+              <span>🪙</span> Bekijk Gutzy
+            </a>
+            <a href="#demo-ritueel" class="btn-secondary">
+              <span>✨</span> Speel Web Demo's
+            </a>
+          </div>
+
+          <div class="hero-metrics-bar">
+            <div class="hero-metric-item">
+              <span class="hero-metric-val">2 Titel Releases</span>
+              <span class="hero-metric-label">Gutzy &amp; Plinkzy op Android</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-val">100% Lokaal</span>
+              <span class="hero-metric-label">Geen verplichte accounts</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-val">60 FPS Physics</span>
+              <span class="hero-metric-label">Haptics &amp; Synth Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: DUAL-APP SHOWCASE DECK -->
+        <div class="hero-showcase-col">
+          <div class="hero-bento-stage">
+
+            <!-- CARD 1: PLINKZY (NEW GAME) -->
+            <div class="hero-app-showcase-card hero-card-plinkzy tilt-card">
+              <div class="hero-card-top">
+                <img src="assets/plinkzy_icon.jpg" alt="Plinkzy Game Icon" class="hero-card-icon">
+                <div>
+                  <span class="hero-card-tag tag-plinkzy">🕹️ NIEUWE ARCADE GAME</span>
+                  <div class="hero-card-title">PLINKZY</div>
+                  <div style="font-size: 12.5px; color: #38BDF8; font-weight: 700; margin-top: 2px;">
+                    90s Neon Coin-Drop &amp; Pinball Roguelite
+                  </div>
+                </div>
+              </div>
+              <p class="hero-card-desc">
+                Mik met het precisie-kanon, bedien de 3D flippers en laat gouden ster-munten stuiteren door piramides vol neon bumpers tot 60x Jackpot!
+              </p>
+              <div class="hero-card-footer">
+                <div class="hero-card-pills">
+                  <span class="hero-mini-pill">🎯 Laser Aim &amp; Flippers</span>
+                  <span class="hero-mini-pill">💣 8 Speciale Munten</span>
+                  <span class="hero-mini-pill">⚡ 60x Jackpot</span>
+                </div>
+                <a href="/plinkzy.html" class="hero-card-link">
+                  Speel &amp; Ontdek ➔
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD 2: GUTZY (FLAGSHIP APP) -->
+            <div class="hero-app-showcase-card hero-card-gutzy tilt-card">
+              <div class="hero-card-top">
+                <img src="assets/gutzy_icon.jpg" alt="Gutzy App Icon" class="hero-card-icon">
+                <div>
+                  <span class="hero-card-tag tag-gutzy">🪙 PSYCHOLOGISCHE KEUZE-APP</span>
+                  <div class="hero-card-title">GUTZY</div>
+                  <div style="font-size: 12.5px; color: #4F46E5; font-weight: 800; margin-top: 2px;">
+                    Trust Your Gut in 60 Seconds
+                  </div>
+                </div>
+              </div>
+              <p class="hero-card-desc">
+                Twijfel je ergens over? Het 60-seconden munt-ritueel ontmaskert direct je ware buikgevoel, compleet met 5 deelbare vintage kassabonnen.
+              </p>
+              <div class="hero-card-footer">
+                <div class="hero-card-pills">
+                  <span class="hero-mini-pill">🧾 5 Kassabonnen</span>
+                  <span class="hero-mini-pill">🎡 Rad &amp; 8-Ball</span>
+                  <span class="hero-mini-pill">🛡️ 0 Trackers</span>
+                </div>
+                <a href="/gutzy.html" class="hero-card-link">
+                  Bekijk Gutzy ➔
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC STUDIO MARQUEE TICKER -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ W ▲ ! Ξ STUDIO</span>
+        <span>•</span>
+        <span class="marquee-item-pink">NIEUW: PLINKZY 90S NEON COIN-DROP ARCADE</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-mint">GUTZY LIVE OP GOOGLE PLAY</span>
+        <span class="marquee-dot">●</span>
+        <span>35 ARCADE STAGES &amp; 3D FLIPPERS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">HAK DE KNOOP DOOR IN 60s</span>
+        <span class="marquee-dot">●</span>
+        <span>VAKMANSCHAP, PRIVACY &amp; SPEELSHEID</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">WAIE CREATIVE LAB</span>
+        <span>•</span>
+      </div>
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ W ▲ ! Ξ STUDIO</span>
+        <span>•</span>
+        <span class="marquee-item-pink">NIEUW: PLINKZY 90S NEON COIN-DROP ARCADE</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-mint">GUTZY LIVE OP GOOGLE PLAY</span>
+        <span class="marquee-dot">●</span>
+        <span>35 ARCADE STAGES &amp; 3D FLIPPERS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">HAK DE KNOOP DOOR IN 60s</span>
+        <span class="marquee-dot">●</span>
+        <span>VAKMANSCHAP, PRIVACY &amp; SPEELSHEID</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">WAIE CREATIVE LAB</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE INTERACTIVE GUTZY DECISION RITUAL WIDGET -->
+  <section id="demo-ritueel" class="interactive-widget-section reveal-on-scroll">
+    <div class="container">
+      <div class="decision-widget-box tilt-card">
+        <div class="widget-header">
+          <div class="widget-badge">
+            <span>🪙</span> INTERACTIEVE DEMO • PROBEER HET WEB-RITUEEL
+          </div>
+          <h2 class="widget-title">Twijfel je ergens over? Test direct je buikgevoel</h2>
+          <p class="widget-subtitle">
+            Kies of typ hieronder twee opties en gooi de virtuele Gutzy munt. Let goed op wat je voelt op het moment dat de munt neerkomt!
+          </p>
+        </div>
+
+        <!-- Quick Dilemma Presets -->
+        <div class="preset-pills-row">
+          <span class="preset-title">Snelle voorbeelden:</span>
+          <button type="button" class="preset-pill" data-a="🍕 Pizza" data-b="🍣 Sushi">🍕 Pizza vs 🍣 Sushi</button>
+          <button type="button" class="preset-pill" data-a="🏃‍♂️ Nu Sporten" data-b="🛋️ Bankhangen">🏃‍♂️ Sporten vs 🛋️ Bankhangen</button>
+          <button type="button" class="preset-pill" data-a="☕ Dubbele Espresso" data-b="🍵 Groene Thee">☕ Espresso vs 🍵 Thee</button>
+          <button type="button" class="preset-pill" data-a="🚀 Vandaag Starten" data-b="⏳ Tot Morgen Wachten">🚀 Starten vs ⏳ Wachten</button>
+        </div>
+
+        <div class="widget-grid">
+          <!-- Choice A -->
+          <div class="choice-input-card choice-a">
+            <span class="choice-label-badge">OPTIE A (KOP)</span>
+            <input type="text" id="choice-a-input" class="choice-input" value="🍕 Pizza" placeholder="Typ optie A...">
+          </div>
+
+          <!-- 3D Coin Stage -->
+          <div class="coin-stage">
+            <div id="coin-3d" class="coin-3d-wrap" title="Gooi de munt!">
+              <div class="coin-face coin-face-front">
+                <div class="coin-symbol">A</div>
+                <div class="coin-rim-text">KOP • OPTIE A</div>
+              </div>
+              <div class="coin-face coin-face-back">
+                <div class="coin-symbol">B</div>
+                <div class="coin-rim-text">MUNT • OPTIE B</div>
+              </div>
+            </div>
+            <div class="coin-shadow"></div>
+          </div>
+
+          <!-- Choice B -->
+          <div class="choice-input-card choice-b">
+            <span class="choice-label-badge">OPTIE B (MUNT)</span>
+            <input type="text" id="choice-b-input" class="choice-input" value="🍣 Sushi" placeholder="Typ optie B...">
+          </div>
+        </div>
+
+        <div class="widget-actions">
+          <button type="button" id="btn-flip-coin" class="btn-flip-coin">
+            <span>🪙</span> GOOI DE MUNT (FLIP COIN)
+          </button>
+        </div>
+
+        <!-- Psychological Result Card -->
+        <div id="gut-result-card" class="gut-result-card">
+          <div class="gut-result-badge">⚡ De Munt Heeft Gesproken</div>
+          <div id="gut-result-choice" class="gut-result-choice">KOP: Optie A</div>
+          <p id="gut-result-text" class="gut-result-text">
+            Wat voelde je direct in je buik toen hij landde? Opluchting of teleurstelling?
+          </p>
+          <a href="#gutzy" class="gut-result-cta">
+            Download Gutzy op Google Play voor 5 vintage bonnetjes, haptics & keuzeraderen ➔
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED GAME SPOTLIGHT: PLINKZY -->
+  <section id="plinkzy" style="padding: 50px 0 40px;" class="reveal-on-scroll">
+    <div class="container">
+      <div class="section-title">Nieuwe Arcade Release</div>
+      <h2 class="section-headline">Ontmoet Plinkzy ★ 90s Neon Coin-Drop &amp; Pinball</h2>
+
+      <div class="plinkzy-featured-card tilt-card">
+        <div class="featured-content">
+          <div class="featured-badge">🕹️ NIEUWE GAME • CYBER ROGUELITE COIN DROP</div>
+          <div class="app-title-group">
+            <img src="assets/plinkzy_icon.jpg" alt="Plinkzy App Icon" class="app-icon-img">
+            <div>
+              <h3 class="app-heading">PLINKZY</h3>
+              <div class="app-subtitle">Laser Aiming, 3D Pinball Flippers, Chain Fever &amp; 60x Jackpots</div>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Duik in een explosieve 90s neon coin-drop en pinball-wereld! Richt het precisie-kanon (<code>-30°</code> tot <code>+30°</code>), red vallende munten met de <strong>3D Flippers</strong>, breek alle Star Mission Pegs voor <strong>Chain Fever</strong> en ontgrendel 8 speciale munten en permanente upgrades in de <strong>Arcade Vault</strong>.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item"><span>🎯</span> Laser Richtkanon &amp; 3D Flippers</div>
+            <div class="feature-item"><span>💣</span> 8 Speciale Munten &amp; Arcade Vault</div>
+            <div class="feature-item"><span>⚡</span> Safe, Classic &amp; Extreme (60x)</div>
+            <div class="feature-item"><span>🛡️</span> 100% Virtueel • Geen Gokken</div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="/plinkzy.html" class="btn-synthwave">
+              <span>🕹️</span> Bekijk Plinkzy Pagina
+            </a>
+            <a href="assets/plinkzy-release.apk" download class="btn-dark-glass">
+              <span>📦</span> Download APK (v1.0.0)
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.waie.dropzy" target="_blank" class="btn-dark-glass">
+              <span>▶</span> Google Play
+            </a>
+            <a href="/privacy.html#plinkzy-privacy" class="btn-dark-glass">
+              <span>🔒</span> Privacybeleid
+            </a>
+          </div>
+        </div>
+
+        <!-- LIVE INTERACTIVE PLINKZY CABINET BOARD (NEW VERSION) -->
+        <div class="plinkzy-arcade-stage">
+          <div class="plinkzy-canvas-header">
+            <span>⚡✨ PLINKZY LIVE CABINET ✨⚡</span>
+            <span>SCORE: <strong id="plinkzy-live-score" style="color:#00FF88;">2,450</strong></span>
+          </div>
+          <div class="plinkzy-mode-bar">
+            <span style="color:#94A3B8;">WAVE 1 • CLASSIC PYRAMID</span>
+            <div class="plinkzy-mode-pills">
+              <button type="button" class="plinkzy-mode-btn" data-mode="safe">SAFE</button>
+              <button type="button" class="plinkzy-mode-btn is-active" data-mode="classic">★ CLASSIC ★</button>
+              <button type="button" class="plinkzy-mode-btn" data-mode="extreme">🔥 EXTREME</button>
+            </div>
+          </div>
+          <canvas id="plinkzy-mini-canvas" width="460" height="360" title="Beweeg je muis om te richten en klik om een munt te schieten!"></canvas>
+          <div class="plinkzy-controls-bar">
+            <button type="button" id="plinkzy-btn-left" class="plinkzy-ctrl-btn plinkzy-btn-left">◀ FLIPPER</button>
+            <button type="button" id="plinkzy-btn-drop" class="plinkzy-ctrl-btn plinkzy-btn-drop">🪙 DROP COIN</button>
+            <button type="button" id="plinkzy-btn-right" class="plinkzy-ctrl-btn plinkzy-btn-right">FLIPPER ▶</button>
+          </div>
+          <div class="plinkzy-canvas-footer">
+            <span>🎯 <strong>Richt met je muis</strong> &amp; gebruik de flippers (of toetsen A / D)!</span>
+            <span style="color:#FFD13B; font-weight:800;">★ TOT 60x JACKPOT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLINKZY SCREENSHOTS SHOWCASE -->
+      <div style="margin-top: 40px;" class="reveal-on-scroll">
+        <div class="section-title">In-Game Screenshots &amp; Gameplay</div>
+        <h3 style="font-size: 24px; font-weight: 900; color: #0F172A; margin-bottom: 8px;">Een kijkje binnenin Plinkzy</h3>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">90s neon coin-drop actie, het richtkanon met laser-vizier, 3D flippers, de Arcade Vault en de 8 speciale munten. Klik op een screenshot voor vergroting.</p>
+
+        <div class="screenshots-wrapper">
+          <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Vorige">‹</button>
+          <div class="screenshots-scroll">
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/01_plinkzy_splash.png" alt="Plinkzy 90s Arcade Splash Screen" loading="lazy">
+              <div class="screenshot-caption">🕹️ Plinkzy 90s Arcade Intro</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/02_plinkzy_gameplay.png" alt="Plinkzy Wave 1 Classic Pyramid" loading="lazy">
+              <div class="screenshot-caption">🪙 Classic Pyramid &amp; Flippers</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/03_plinkzy_aim_action.png" alt="Plinkzy Laser Aiming +30°" loading="lazy">
+              <div class="screenshot-caption">🎯 Precisie Kanon (+30° Aim)</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/04_plinkzy_arcade_vault.png" alt="Plinkzy Arcade Vault Upgrades & Retro Themes" loading="lazy">
+              <div class="screenshot-caption">🏛️ Arcade Vault &amp; Thema's</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/05_plinkzy_8_coins.png" alt="Plinkzy 8 Speciale Arcade Munten" loading="lazy">
+              <div class="screenshot-caption">💣 8 Speciale Drop Munten</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/06_plinkzy_wave_reward.png" alt="Plinkzy Wave Voltooid Beloning" loading="lazy">
+              <div class="screenshot-caption">🏆 Wave Voltooid &amp; Kluis Buit</div>
+            </div>
+          </div>
+          <button class="screenshots-nav-btn screenshots-nav-next" aria-label="Volgende">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED APP SPOTLIGHT: GUTZY -->
+  <section id="gutzy" style="padding: 40px 0 80px;" class="reveal-on-scroll">
+    <div class="container">
+      <div class="section-title">Vlaggenschip App</div>
+      <h2 class="section-headline">Ontmoet Gutzy ★ Trust Your Gut in 60s</h2>
+
+      <div class="featured-card tilt-card">
+        <div class="featured-content">
+          <div class="featured-badge">★ NIEUWE RELEASE • GOOGLE PLAY STORE ★</div>
+          <div class="app-title-group">
+            <img src="assets/gutzy_icon.jpg" alt="Gutzy App Icon" class="app-icon-img">
+            <div>
+              <h3 class="app-heading">GUTZY</h3>
+              <div class="app-subtitle">Hak knopen door in 60 seconden met intuïtie & retro pop ritueel</div>
+            </div>
+          </div>
+
+          <p class="app-description">
+            Blijf je twijfelen? Het 60-seconden munt-ritueel brengt je onderbewuste voorkeur direct naar boven. Voel je opluchting of stiekeme teleurstelling als de munt landt? Dan weet je exact wat je écht wilt.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item"><span>🪙</span> 2.5D Retro Munt Ritueel</div>
+            <div class="feature-item"><span>🧾</span> 5 Vintage Bonnetjes Stijlen</div>
+            <div class="feature-item"><span>🎡</span> Keuzerad & Magic 8-Ball</div>
+            <div class="feature-item"><span>🛡️</span> 100% Offline & 0 Trackers</div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.gutzy" target="_blank" class="btn-playstore">
+              <span>▶</span> Google Play Store
+            </a>
+            <a href="/gutzy.html" class="btn-secondary">
+              <span>📱</span> Bekijk Gutzy Pagina
+            </a>
+            <a href="assets/gutzy-release.apk" download class="btn-secondary">
+              <span>📦</span> Download APK
+            </a>
+            <a href="/privacy.html" class="btn-secondary">
+              <span>🔒</span> Privacybeleid
+            </a>
+          </div>
+        </div>
+
+        <div class="featured-banner-wrapper">
+          <img src="assets/gutzy_banner.jpg" alt="Gutzy Google Play Banner" class="featured-banner-img">
+        </div>
+      </div>
+
+      <!-- APP SCREENSHOTS PREVIEW (LIGHT THEME) -->
+      <div style="margin-top: 48px;" class="reveal-on-scroll">
+        <div class="section-title">Screenshots & Ervaring</div>
+        <h3 style="font-size: 24px; font-weight: 900; color: #0F172A; margin-bottom: 8px;">Een kijkje binnenin Gutzy</h3>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">Vloeiende retro 90s physics, psychologische feedback en vintage bonnen direct op je telefoon. Klik op een screenshot voor vergroting of sleep om te bladeren.</p>
+        
+        <div class="screenshots-wrapper">
+          <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Vorige screenshots">‹</button>
+          <div class="screenshots-scroll">
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/01_gutzy_slide1_overthinking.png" alt="Stuck in Overthinking" loading="lazy">
+              <div class="screenshot-caption">🤯 Overthinking Trap</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/02_gutzy_slide2_coin_ritual.png" alt="The 60s Coin Ritual" loading="lazy">
+              <div class="screenshot-caption">🪙 The Coin Ritual</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/03_gutzy_home_dashboard.png" alt="Gutzy Home Dashboard" loading="lazy">
+              <div class="screenshot-caption">📊 Intuition Barometer</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/04_gutzy_dilemma_setup.png" alt="Dilemma Setup" loading="lazy">
+              <div class="screenshot-caption">⚡ Option A vs Option B</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/05_gutzy_gut_reaction.png" alt="Instant Gut Reaction" loading="lazy">
+              <div class="screenshot-caption">❤️ Relief vs Regret</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/06_gutzy_spin_wheel.png" alt="Keuzerad Spin Wheel" loading="lazy">
+              <div class="screenshot-caption">🎡 Keuzerad & 8-Ball</div>
+            </div>
+            <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+              <img src="assets/screenshots/07_gutzy_retro_receipt.png" alt="Retro Thermal Receipt" loading="lazy">
+              <div class="screenshot-caption">🧾 Vintage Kassabon</div>
+            </div>
+          </div>
+          <button class="screenshots-nav-btn screenshots-nav-next" aria-label="Volgende screenshots">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO PILLARS -->
+  <section class="pillars-section reveal-on-scroll">
+    <div class="container">
+      <div class="section-title">Onze Filosofie</div>
+      <h2 class="section-headline">Waarom mensen graag onze apps gebruiken</h2>
+
+      <div class="pillars-grid">
+        <div class="pillar-card tilt-card">
+          <div class="pillar-icon">🛡️</div>
+          <h3>Privacy by Design</h3>
+          <p>
+            Al onze apps werken 100% offline. Geen accounts, geen verplichte logins, geen analytics en geen verkoop van persoonlijke data. Jouw toestel is jouw kluis.
+          </p>
+        </div>
+
+        <div class="pillar-card tilt-card">
+          <div class="pillar-icon">🕹️</div>
+          <h3>Speels & Tastbaar</h3>
+          <p>
+            Software hoeft niet saai en steriel te zijn. Wij bouwen haptische feedback, levendige physics, geluidseffecten en retro pop-art details in al onze creaties.
+          </p>
+        </div>
+
+        <div class="pillar-card tilt-card">
+          <div class="pillar-icon">⚡</div>
+          <h3>Bliksemsnel & Betrouwbaar</h3>
+          <p>
+            Geen trage laadschermen of logge webviews. We bouwen native performante apps die soepel draaien op elk toestel, zelfs zonder internetverbinding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO & DEVELOPER INFO -->
+  <section id="organisatie" class="company-section reveal-on-scroll">
+    <div class="container">
+      <div class="section-title">Over de Studio &amp; Ontwikkelaar</div>
+      <h2 class="section-headline">WAIE • [W▲!Ξ] Creative Lab</h2>
+
+      <div class="company-box tilt-card">
+        <div class="company-grid">
+          <div class="company-info">
+            <h3>WAIE Studio</h3>
+            <p>
+              <strong>WAIE</strong> is een onafhankelijke Belgische app- en gamestudio. Wij bouwen originele mobiele applicaties en arcade games met focus op vakmanschap, speelplezier en respect voor jouw privacy.
+            </p>
+
+            <table class="legal-table">
+              <tr>
+                <td class="label">Studio / Naam:</td>
+                <td class="value">WAIE • [W▲!Ξ] (waie.be)</td>
+              </tr>
+              <tr>
+                <td class="label">Releases:</td>
+                <td class="value">Gutzy &amp; Plinkzy</td>
+              </tr>
+              <tr>
+                <td class="label">Land:</td>
+                <td class="value">België (BE) • Europese Unie</td>
+              </tr>
+              <tr>
+                <td class="label">Platform:</td>
+                <td class="value">Google Play Store &amp; Web</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="contact-card">
+            <h4>Heb je vragen of ondersteuning nodig?</h4>
+            <p>
+              Voor gebruikersvragen over onze apps, feedback of samenwerkingen:
+            </p>
+            <a href="mailto:info@waie.be" class="contact-email-link">
+              <span>✉️</span> info@waie.be
+            </a>
+            <div style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+              Reactietijd gewoonlijk binnen 24 uur op werkdagen.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-wrapper">
+      <div>
+        <strong>WAIE • [W▲!Ξ] Studio</strong> • Onafhankelijke App &amp; Game Studio • België.
+      </div>
+      <div class="footer-links">
+        <a href="/plinkzy.html">Plinkzy</a>
+        <a href="/gutzy.html">Gutzy</a>
+        <a href="/privacy.html">Privacybeleid</a>
+        <a href="mailto:info@waie.be">Contact</a>
+        <a href="/en/" class="lang-switch-btn" title="Switch to English" style="padding: 4px 10px; font-size: 12px;">
+          <span>🇬🇧</span> EN
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive & Motion Engine -->
+  <script src="assets/interactive.js"></script>
+</body>
+</html>

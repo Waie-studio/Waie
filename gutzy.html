@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gutzy ★ Trust Your Gut in 60s • WAIE Studio</title>
+  <meta name="description" content="Gutzy helpt je in 60 seconden knopen doorhakken met het psychologische munt-ritueel, 5 vintage kassabon-stijlen, keuzerad en Magic 8-Ball.">
+  <link rel="icon" type="image/svg+xml" href="assets/waie_flat_symbol.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gutzy ★ Trust Your Gut">
+  <meta property="og:description" content="Hak knopen door in 60 seconden met psychologie en 90's retro pop flair. Door WAIE.">
+  <meta property="og:image" content="https://waie.be/assets/gutzy_banner.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Righteous&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Interactive & Motion CSS -->
+  <link rel="stylesheet" href="assets/interactive.css">
+
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F1F5F9;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --accent-yellow: #FFD13B;
+      --accent-pink: #FF6584;
+      --accent-mint: #10B981;
+      --accent-blue: #3B82F6;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(79, 70, 229, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(16, 185, 129, 0.04) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    /* FLAT GRAPHIC W ▲ ! Ξ LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge-flat {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: #0F172A;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .logo:hover .logo-badge-flat {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-glyphs {
+      font-family: 'Righteous', 'Space Grotesk', sans-serif;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #0F172A;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo-sub {
+      font-family: 'Space Grotesk', monospace, sans-serif;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    .hero-app {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+
+    .app-icon-lg {
+      width: 110px;
+      height: 110px;
+      border-radius: 26px;
+      border: 3.5px solid var(--accent-yellow);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+      margin-bottom: 24px;
+    }
+
+    h1.app-title {
+      font-family: 'Righteous', cursive;
+      font-size: 54px;
+      letter-spacing: 2.5px;
+      margin-bottom: 12px;
+      color: #0F172A;
+    }
+
+    .app-tagline {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 24px;
+      font-weight: 500;
+    }
+
+    .lang-pills {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .lang-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-playstore {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #FFFFFF;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-playstore:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-apk {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      color: #0F172A;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-apk:hover {
+      background: var(--bg-card-subtle);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+
+    .app-banner-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 70px;
+      background: #FFFFFF;
+    }
+
+    .app-banner-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* SCREENSHOTS SHOWCASE (LIGHT THEME) */
+    .screenshots-section {
+      margin-bottom: 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4F46E5;
+      margin-bottom: 8px;
+    }
+
+    .section-headline {
+      font-size: 34px;
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #CBD5E1 transparent;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+
+    .screenshot-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 6px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: #0F172A;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 8px 4px 4px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .feature-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .feat-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 34px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feat-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .feat-card h3 {
+      font-family: 'Righteous', cursive;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0F172A;
+      letter-spacing: 0.5px;
+    }
+
+    .feat-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .receipt-highlight {
+      background: #FFFFFF;
+      border: 2px solid var(--border);
+      border-radius: 28px;
+      padding: 44px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .receipt-highlight h2 {
+      font-family: 'Righteous', cursive;
+      font-size: 32px;
+      margin-bottom: 14px;
+      color: #0F172A;
+    }
+
+    .receipt-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .receipt-list li {
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #334155;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-align: center;
+      background: #FFFFFF;
+    }
+
+    @media (max-width: 860px) {
+      .feature-columns { grid-template-columns: 1fr; }
+      .receipt-highlight { grid-template-columns: 1fr; padding: 28px; }
+      h1.app-title { font-size: 40px; }
+      .screenshot-card { flex: 0 0 190px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <div class="logo-badge-flat">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+            <path d="M 6 12 L 12 28 L 16 16 L 20 28 L 26 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="33,12 28,24 38,24" fill="#FFD13B"/>
+            <rect x="14" y="32" width="2.5" height="5" rx="1" fill="#10B981"/>
+            <circle cx="15.25" cy="39" r="1.2" fill="#10B981"/>
+            <line x1="26" y1="32" x2="36" y2="32" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="35.5" x2="36" y2="35.5" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="39" x2="36" y2="39" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <div class="logo-glyphs hero-glyphs-interactive">
+            <span class="interactive-glyph glyph-w" title="W">W</span><span class="interactive-glyph glyph-triangle" style="color:#FFD13B;" title="▲">▲</span><span class="interactive-glyph glyph-exclamation" style="color:#4F46E5;" title="!">!</span><span class="interactive-glyph glyph-xi" title="Ξ"><span></span><span></span><span></span></span>
+          </div>
+          <span class="logo-sub">[STUDIO]</span>
+        </div>
+      </a>
+      <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
+        <a href="/" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">← Alle Apps &amp; Games</a>
+        <a href="/plinkzy.html" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Plinkzy</a>
+        <a href="/privacy.html" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Privacybeleid</a>
+        <a href="/en/gutzy.html" class="lang-switch-btn" title="Switch to English">
+          <span class="lang-switch-flag">🇬🇧</span>
+          <span class="lang-switch-code">EN</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- DYNAMIC STUDIO MARQUEE TICKER -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ GUTZY IS LIVE</span>
+        <span>•</span>
+        <span class="marquee-item-mint">HAK DE KNOOP DOOR IN 60 SECONDEN</span>
+        <span class="marquee-dot">●</span>
+        <span>2.5D RETRO MUNT RITUEEL</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">5 VINTAGE BONNETJES</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">100% OFFLINE & PRIVACY-EERST</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">DOOR WAIE • [W▲!Ξ]</span>
+        <span>•</span>
+      </div>
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ GUTZY IS LIVE</span>
+        <span>•</span>
+        <span class="marquee-item-mint">HAK DE KNOOP DOOR IN 60 SECONDEN</span>
+        <span class="marquee-dot">●</span>
+        <span>2.5D RETRO MUNT RITUEEL</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">5 VINTAGE BONNETJES</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">100% OFFLINE & PRIVACY-EERST</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">DOOR WAIE • [W▲!Ξ]</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="hero-app">
+      <img src="assets/gutzy_icon.jpg" alt="Gutzy Logo" class="app-icon-lg tilt-card">
+      <h1 class="app-title">GUTZY</h1>
+      <p class="app-tagline">
+        Trust your gut in 60 seconds. Het psychologische ritueel om definitief knopen door te hakken met retro 90's pop energie.
+      </p>
+
+      <div class="lang-pills">
+        <span class="lang-pill">🇬🇧 English</span>
+        <span class="lang-pill">🇳🇱 Nederlands</span>
+        <span class="lang-pill">🇫🇷 Français</span>
+        <span class="lang-pill">🇩🇪 Deutsch</span>
+        <span class="lang-pill">🇪🇸 Español</span>
+      </div>
+
+      <div class="badge-bar">
+        <span class="pill">🪙 2.5D Retro Munt Ritueel</span>
+        <span class="pill">🧾 5 Vintage Bonnetjes</span>
+        <span class="pill">🎡 Keuzerad</span>
+        <span class="pill">🎱 Magic 8-Ball</span>
+        <span class="pill">🛡️ 100% Offline & Geen Reclame</span>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.gutzy" target="_blank" class="btn-playstore">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.44 1.44 0 0 1-.22-.767V2.581c0-.285.08-.55.22-.767zM14.852 13.06l2.428 2.428-10.963 6.33 8.535-8.758zm2.428-4.548l-2.428 2.428-8.535-8.758 10.963 6.33zm1.18 1.18l2.94 1.7a1.08 1.08 0 0 1 0 1.876l-2.94 1.7-2.12-2.12 2.12-2.156z"/>
+          </svg>
+          Google Play Store
+        </a>
+        <a href="#demo-ritueel" class="btn-apk">
+          <span>✨</span> Probeer Web Ritueel
+        </a>
+        <a href="assets/gutzy-release.apk" download class="btn-apk">
+          <span>📦</span> Download APK (v1.0.0)
+        </a>
+      </div>
+
+      <div class="app-banner-card tilt-card">
+        <img src="assets/gutzy_banner.jpg" alt="Gutzy Feature Graphic">
+      </div>
+    </section>
+
+    <!-- LIVE INTERACTIVE GUTZY DECISION RITUAL WIDGET -->
+    <section id="demo-ritueel" class="interactive-widget-section reveal-on-scroll">
+      <div class="decision-widget-box tilt-card">
+        <div class="widget-header">
+          <div class="widget-badge">
+            <span>🪙</span> INTERACTIEVE WEB DEMO • PROBEER DIRECT
+          </div>
+          <h2 class="widget-title">Test het Psychologische Munt-Ritueel</h2>
+          <p class="widget-subtitle">
+            Wat je ook twijfelt: voer twee opties in en gooi de virtuele 2.5D munt. De reactie in je onderbuik verraadt wat je écht wilt.
+          </p>
+        </div>
+
+        <div class="preset-pills-row">
+          <span class="preset-title">Kies een dilemma:</span>
+          <button type="button" class="preset-pill" data-a="🍕 Pizza" data-b="🍣 Sushi">🍕 Pizza vs 🍣 Sushi</button>
+          <button type="button" class="preset-pill" data-a="🏃‍♂️ Nu Sporten" data-b="🛋️ Bankhangen">🏃‍♂️ Sporten vs 🛋️ Bankhangen</button>
+          <button type="button" class="preset-pill" data-a="☕ Espresso" data-b="🍵 Matcha">☕ Espresso vs 🍵 Matcha</button>
+          <button type="button" class="preset-pill" data-a="✈️ Weekendje Weg" data-b="🏡 Lekker Thuis">✈️ Weg vs 🏡 Thuis</button>
+        </div>
+
+        <div class="widget-grid">
+          <div class="choice-input-card choice-a">
+            <span class="choice-label-badge">OPTIE A (KOP)</span>
+            <input type="text" id="choice-a-input" class="choice-input" value="🍕 Pizza">
+          </div>
+
+          <div class="coin-stage">
+            <div id="coin-3d" class="coin-3d-wrap" title="Klik om te gooien!">
+              <div class="coin-face coin-face-front">
+                <div class="coin-symbol">A</div>
+                <div class="coin-rim-text">KOP • OPTIE A</div>
+              </div>
+              <div class="coin-face coin-face-back">
+                <div class="coin-symbol">B</div>
+                <div class="coin-rim-text">MUNT • OPTIE B</div>
+              </div>
+            </div>
+            <div class="coin-shadow"></div>
+          </div>
+
+          <div class="choice-input-card choice-b">
+            <span class="choice-label-badge">OPTIE B (MUNT)</span>
+            <input type="text" id="choice-b-input" class="choice-input" value="🍣 Sushi">
+          </div>
+        </div>
+
+        <div class="widget-actions">
+          <button type="button" id="btn-flip-coin" class="btn-flip-coin">
+            <span>🪙</span> GOOI DE MUNT (FLIP COIN)
+          </button>
+        </div>
+
+        <div id="gut-result-card" class="gut-result-card">
+          <div class="gut-result-badge">⚡ De Munt Heeft Gesproken</div>
+          <div id="gut-result-choice" class="gut-result-choice">KOP: Optie A</div>
+          <p id="gut-result-text" class="gut-result-text">
+            Wat voelde je direct in je buik toen hij landde? Opluchting of teleurstelling?
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=com.gutzy" target="_blank" class="gut-result-cta">
+            Download Gutzy op Google Play voor retro kassabonnen, haptics & keuzeraderen ➔
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS SHOWCASE GALLERY -->
+    <section class="screenshots-section reveal-on-scroll">
+      <div class="section-header">
+        <div class="section-title">In-App Preview</div>
+        <h2 class="section-headline">Ontworpen voor Focus & Intuïtie</h2>
+        <p style="color: var(--text-muted); font-size: 15px; margin-top: 8px;">Klik op een screenshot voor vergroting of swipe om te bladeren.</p>
+      </div>
+
+      <div class="screenshots-wrapper">
+        <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Vorige">‹</button>
+        <div class="screenshots-scroll">
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/01_gutzy_slide1_overthinking.png" alt="Stuck in Overthinking" loading="lazy">
+            <div class="screenshot-caption">🤯 Overthinking Trap</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/02_gutzy_slide2_coin_ritual.png" alt="The 60s Coin Ritual" loading="lazy">
+            <div class="screenshot-caption">🪙 The Coin Ritual</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/03_gutzy_home_dashboard.png" alt="Gutzy Home Dashboard" loading="lazy">
+            <div class="screenshot-caption">📊 Intuition Barometer</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/04_gutzy_dilemma_setup.png" alt="Dilemma Setup" loading="lazy">
+            <div class="screenshot-caption">⚡ Option A vs Option B</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/05_gutzy_gut_reaction.png" alt="Instant Gut Reaction" loading="lazy">
+            <div class="screenshot-caption">❤️ Relief vs Regret</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/06_gutzy_spin_wheel.png" alt="Keuzerad Spin Wheel" loading="lazy">
+            <div class="screenshot-caption">🎡 Keuzerad & 8-Ball</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/07_gutzy_retro_receipt.png" alt="Retro Thermal Receipt" loading="lazy">
+            <div class="screenshot-caption">🧾 Vintage Kassabon</div>
+          </div>
+        </div>
+        <button class="screenshots-nav-btn screenshots-nav-next" aria-label="Volgende">›</button>
+      </div>
+    </section>
+
+    <!-- CORE FEATURES -->
+    <section class="feature-columns reveal-on-scroll">
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🪙</div>
+        <h3>Het Munt-Ritueel</h3>
+        <p>
+          "Het moment dat de munt in de lucht hangt, weet je plots wat je hoopt." Gutzy benut deze psychologische reflex om je ware onderbuikgevoel direct te ontdekken.
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🎡</div>
+        <h3>Rad & 8-Ball</h3>
+        <p>
+          Meerdere opties? Laat het levendige Keuzerad (3 tot 8 opties) of de nostalgische Magic 8-Ball een snelle impuls geven voor alledaagse keuzes.
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🔒</div>
+        <h3>Volledige Privacy</h3>
+        <p>
+          Geen accounts, geen trackers, geen advertenties. Al je besluiten en reflecties blijven 100% offline opgeslagen op jouw eigen apparaat.
+        </p>
+      </div>
+    </section>
+
+    <!-- VINTAGE RECEIPT HIGHLIGHT -->
+    <section class="receipt-highlight tilt-card reveal-on-scroll">
+      <div>
+        <h2>Deel Je Besluit als een Echt Vintage Bonnetje 🧾📸</h2>
+        <p style="color: var(--text-muted); font-size: 15.5px; line-height: 1.65;">
+          Zodra je een knoop doorhakt, genereert Gutzy een haarscherpe afbeelding van een oud kassabonnetje met gekartelde mesranden, inktstempels en streepjescode.
+        </p>
+        <ul class="receipt-list">
+          <li><span>🧾</span> <strong>1995 Supermarkt</strong> — Thermisch papier met kartelrand &amp; BESLOTEN stempel</li>
+          <li><span>☕</span> <strong>Grand Café Gutzy</strong> — Vergeeld koffiehuis papier met echte koffiekring-vlek</li>
+          <li><span>🕹️</span> <strong>Arcade Ticket</strong> — Neon pretpark ticket met sterretjes perforaties</li>
+          <li><span>💾</span> <strong>Cyber Matrix</strong> — Mainframe kettingpapier met ponsgaatjes</li>
+          <li><span>📜</span> <strong>Gouden Akte</strong> — Koninklijke oorkonde met rode lakzegel</li>
+        </ul>
+      </div>
+      <div style="text-align: center; background: #F8FAFC; padding: 32px 24px; border-radius: 20px; border: 1.5px solid var(--border);">
+        <div style="font-size: 54px; margin-bottom: 12px;">🧾✨</div>
+        <div style="font-weight: 800; font-size: 17px; margin-bottom: 6px; color: #0F172A;">Exporteer als Echte Foto</div>
+        <div style="color: var(--text-muted); font-size: 13.5px;">Direct te delen op WhatsApp, Instagram Stories of op te slaan in je fotoalbum!</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Gutzy</strong> is een applicatie van <strong>WAIE • [W▲!Ξ] Studio</strong>.
+      </p>
+      <p style="margin-top: 10px;">
+        <a href="/privacy.html" style="color: #4F46E5; font-weight: 600;">Privacybeleid</a> • <a href="mailto:info@waie.be" style="color: #4F46E5; font-weight: 600;">Ondersteuning &amp; Contact</a> • <a href="/en/gutzy.html" style="color: #0F172A; font-weight: 700; margin-left: 8px;">🇬🇧 English</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive & Motion Engine -->
+  <script src="assets/interactive.js"></script>
+
+</body>
+</html>

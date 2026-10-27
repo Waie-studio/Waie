@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plinkzy ★ 90s Neon Coin-Drop &amp; Pinball • WAIE Studio</title>
+  <meta name="description" content="Plinkzy is een 90s neon arcade coin-drop en pinball game van WAIE Studio. Richt het laser-kanon, bedien de 3D flippers, ontgrendel 8 speciale munten en haal tot 60x Jackpots!">
+  <link rel="icon" type="image/svg+xml" href="assets/waie_flat_symbol.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Plinkzy ★ 90s Neon Coin-Drop &amp; Pinball">
+  <meta property="og:description" content="Mik met het precisie-kanon, gebruik 3D flippers, ontgrendel 8 speciale munten en verover 35 stages in 7 retro werelden. Door WAIE.">
+  <meta property="og:image" content="https://waie.be/assets/plinkzy_banner.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Righteous&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Interactive & Motion CSS -->
+  <link rel="stylesheet" href="assets/interactive.css">
+
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F1F5F9;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --accent-yellow: #FFD13B;
+      --accent-pink: #FF007F;
+      --accent-cyan: #00F0FF;
+      --accent-mint: #10B981;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(255, 0, 127, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(0, 240, 255, 0.05) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge-flat {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: #0F172A;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .logo:hover .logo-badge-flat { transform: scale(1.05) rotate(-2deg); }
+    .logo-text-group { display: flex; flex-direction: column; }
+
+    .logo-glyphs {
+      font-family: 'Righteous', 'Space Grotesk', sans-serif;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #0F172A;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo-sub {
+      font-family: 'Space Grotesk', monospace, sans-serif;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    .hero-app {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+
+    .app-icon-lg {
+      width: 122px;
+      height: 122px;
+      border-radius: 28px;
+      border: 3.5px solid var(--accent-yellow);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
+      margin-bottom: 24px;
+    }
+
+    h1.app-title {
+      font-family: 'Righteous', cursive;
+      font-size: 56px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+      color: #0F172A;
+    }
+
+    .app-tagline {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 740px;
+      margin: 0 auto 24px;
+      font-weight: 500;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .pill {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-playstore {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #FFFFFF;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-playstore:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-apk {
+      background: #0F172A;
+      color: #FFD13B;
+      border: 2px solid #0F172A;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 4px 4px 0px #FFD13B;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-apk:hover { transform: translate(-2px, -2px); }
+
+    .plinkzy-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 60px;
+      text-align: left;
+    }
+
+    .banner-showcase-box {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 2.5px solid #0F172A;
+      box-shadow: 6px 6px 0px #0F172A;
+      background: #090614;
+    }
+
+    .banner-showcase-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4F46E5;
+      margin-bottom: 8px;
+    }
+
+    .section-headline {
+      font-size: 34px;
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #CBD5E1 transparent;
+      margin-top: 28px;
+    }
+
+    .screenshot-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 6px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: #0F172A;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 8px 4px 4px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .feature-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 60px 0 80px;
+    }
+
+    .feat-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 34px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feat-icon { font-size: 32px; margin-bottom: 16px; }
+
+    .feat-card h3 {
+      font-family: 'Righteous', cursive;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0F172A;
+      letter-spacing: 0.5px;
+    }
+
+    .feat-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
+
+    .worlds-highlight {
+      background: linear-gradient(135deg, #090614 0%, #161130 60%, #230F35 100%);
+      color: #FFFFFF;
+      border: 2.5px solid #0F172A;
+      border-radius: 28px;
+      padding: 44px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 8px 8px 0px #0F172A;
+    }
+
+    .worlds-highlight h2 {
+      font-family: 'Righteous', cursive;
+      font-size: 32px;
+      margin-bottom: 14px;
+      color: #FFD13B;
+    }
+
+    .worlds-list { list-style: none; margin-top: 18px; }
+    .worlds-list li {
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2E8F0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-align: center;
+      background: #FFFFFF;
+    }
+
+    @media (max-width: 860px) {
+      .plinkzy-hero-grid { grid-template-columns: 1fr; }
+      .feature-columns { grid-template-columns: 1fr; }
+      .worlds-highlight { grid-template-columns: 1fr; padding: 28px; }
+      h1.app-title { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <div class="logo-badge-flat">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+            <path d="M 6 12 L 12 28 L 16 16 L 20 28 L 26 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="33,12 28,24 38,24" fill="#FFD13B"/>
+            <rect x="14" y="32" width="2.5" height="5" rx="1" fill="#10B981"/>
+            <circle cx="15.25" cy="39" r="1.2" fill="#10B981"/>
+            <line x1="26" y1="32" x2="36" y2="32" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="35.5" x2="36" y2="35.5" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="39" x2="36" y2="39" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <div class="logo-glyphs hero-glyphs-interactive">
+            <span class="interactive-glyph glyph-w" title="W">W</span><span class="interactive-glyph glyph-triangle" style="color:#FFD13B;" title="▲">▲</span><span class="interactive-glyph glyph-exclamation" style="color:#4F46E5;" title="!">!</span><span class="interactive-glyph glyph-xi" title="Ξ"><span></span><span></span><span></span></span>
+          </div>
+          <span class="logo-sub">[STUDIO]</span>
+        </div>
+      </a>
+      <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
+        <a href="/" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">← Alle Apps &amp; Games</a>
+        <a href="/gutzy.html" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Gutzy</a>
+        <a href="/privacy.html#plinkzy-privacy" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Privacybeleid</a>
+        <a href="/en/plinkzy.html" class="lang-switch-btn" title="Switch to English">
+          <span class="lang-switch-flag">🇬🇧</span>
+          <span class="lang-switch-code">EN</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- DYNAMIC STUDIO MARQUEE TICKER -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ PLINKZY 90S NEON COIN DROP</span>
+        <span>•</span>
+        <span class="marquee-item-mint">LASER AIM KANON &amp; 3D FLIPPERS</span>
+        <span class="marquee-dot">●</span>
+        <span>35 STAGES IN 7 RETRO WERELDEN</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">CHAIN FEVER &amp; 60x JACKPOTS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">8 SPECIALE MUNTEN &amp; ARCADE VAULT</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">DOOR WAIE • [W▲!Ξ]</span>
+        <span>•</span>
+      </div>
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ PLINKZY 90S NEON COIN DROP</span>
+        <span>•</span>
+        <span class="marquee-item-mint">LASER AIM KANON &amp; 3D FLIPPERS</span>
+        <span class="marquee-dot">●</span>
+        <span>35 STAGES IN 7 RETRO WERELDEN</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">CHAIN FEVER &amp; 60x JACKPOTS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">8 SPECIALE MUNTEN &amp; ARCADE VAULT</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">DOOR WAIE • [W▲!Ξ]</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="hero-app">
+      <img src="assets/plinkzy_icon.jpg" alt="Plinkzy Logo" class="app-icon-lg tilt-card">
+      <h1 class="app-title">PLINKZY</h1>
+      <p class="app-tagline">
+        90s Neon Coin-Drop &amp; Pinball Roguelite. Richt je schoten met het precisie-kanon, red vallende munten met de 3D flippers, activeer Chain Fever en verover 35 stages!
+      </p>
+
+      <div class="badge-bar">
+        <span class="pill">🎯 Precisie Kanon (-30° tot +30°)</span>
+        <span class="pill">🕹️ 3D Pinball Flippers</span>
+        <span class="pill">💣 8 Speciale Munten</span>
+        <span class="pill">⚡ Safe, Classic &amp; Extreme (60x)</span>
+        <span class="pill">🛡️ 100% Virtueel • Geen Echt-Geld Gokken</span>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="assets/plinkzy-release.apk" download class="btn-apk">
+          <span>📦</span> Download Android APK (v1.0.0)
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.waie.dropzy" target="_blank" class="btn-playstore">
+          <span>▶</span> Google Play Store
+        </a>
+      </div>
+
+      <!-- BANNER + LIVE INTERACTIVE PLINKZY CABINET -->
+      <div class="plinkzy-hero-grid">
+        <div>
+          <div class="banner-showcase-box tilt-card" style="margin-bottom: 18px;">
+            <img src="assets/plinkzy_banner.jpg" alt="Plinkzy 90s Neon Coin Drop Banner">
+          </div>
+          <div style="background: #FFFFFF; border: 1.5px solid var(--border); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 900; color: #4F46E5; text-transform: uppercase; margin-bottom: 4px;">
+              ⚡ Test het nieuwe Plinkzy Bord hiernaast live!
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin: 0;">
+              Wissel tussen <strong>SAFE</strong>, <strong>★ CLASSIC ★</strong> en <strong>🔥 EXTREME</strong>, richt met je muis het gouden kanon en bedien de <strong>◀ FLIPPER</strong> en <strong>FLIPPER ▶</strong> knoppen om munten terug omhoog te schieten!
+            </p>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE PLINKZY MINI CABINET STAGE -->
+        <div class="plinkzy-arcade-stage">
+          <div class="plinkzy-canvas-header">
+            <span>⚡✨ PLINKZY LIVE CABINET ✨⚡</span>
+            <span>SCORE: <strong id="plinkzy-live-score" style="color:#00FF88;">2,450</strong></span>
+          </div>
+          <div class="plinkzy-mode-bar">
+            <span style="color:#94A3B8;">WAVE 1 • CLASSIC PYRAMID</span>
+            <div class="plinkzy-mode-pills">
+              <button type="button" class="plinkzy-mode-btn" data-mode="safe">SAFE</button>
+              <button type="button" class="plinkzy-mode-btn is-active" data-mode="classic">★ CLASSIC ★</button>
+              <button type="button" class="plinkzy-mode-btn" data-mode="extreme">🔥 EXTREME</button>
+            </div>
+          </div>
+          <canvas id="plinkzy-mini-canvas" width="500" height="360" title="Beweeg je muis om te richten en klik om een munt te droppen!"></canvas>
+          <div class="plinkzy-controls-bar">
+            <button type="button" id="plinkzy-btn-left" class="plinkzy-ctrl-btn plinkzy-btn-left">◀ FLIPPER</button>
+            <button type="button" id="plinkzy-btn-drop" class="plinkzy-ctrl-btn plinkzy-btn-drop">🪙 DROP COIN</button>
+            <button type="button" id="plinkzy-btn-right" class="plinkzy-ctrl-btn plinkzy-btn-right">FLIPPER ▶</button>
+          </div>
+          <div class="plinkzy-canvas-footer">
+            <span>🎯 <strong>Richt met je muis</strong> &amp; gebruik de flippers (of A / D)!</span>
+            <span style="color:#FFD13B; font-weight:800;">★ TOT 60x JACKPOT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-GAME SCREENSHOTS GALLERY -->
+    <section class="screenshots-section reveal-on-scroll" style="margin-bottom: 70px;">
+      <div class="section-header">
+        <div class="section-title">In-Game Screenshots</div>
+        <h2 class="section-headline">Echte Plinkzy Gameplay, Laser Aim &amp; Arcade Vault</h2>
+        <p style="color: var(--text-muted); font-size: 15px; margin-top: 8px;">Klik op een screenshot voor vergroting of swipe om door de in-game schermen te bladeren.</p>
+      </div>
+
+      <div class="screenshots-wrapper">
+        <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Vorige">‹</button>
+        <div class="screenshots-scroll">
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/01_plinkzy_splash.png" alt="Plinkzy 90s Arcade Splash Screen" loading="lazy">
+            <div class="screenshot-caption">🕹️ Plinkzy 90s Arcade Intro</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/02_plinkzy_gameplay.png" alt="Plinkzy Wave 1 Classic Pyramid" loading="lazy">
+            <div class="screenshot-caption">🪙 Classic Pyramid &amp; Flippers</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/03_plinkzy_aim_action.png" alt="Plinkzy Laser Aiming +30°" loading="lazy">
+            <div class="screenshot-caption">🎯 Precisie Kanon (+30° Aim)</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/04_plinkzy_arcade_vault.png" alt="Plinkzy Arcade Vault Upgrades & Retro Themes" loading="lazy">
+            <div class="screenshot-caption">🏛️ Arcade Vault &amp; Thema's</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/05_plinkzy_8_coins.png" alt="Plinkzy 8 Speciale Arcade Munten" loading="lazy">
+            <div class="screenshot-caption">💣 8 Speciale Drop Munten</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Klik om te vergroten">
+            <img src="assets/screenshots/06_plinkzy_wave_reward.png" alt="Plinkzy Wave Voltooid Beloning" loading="lazy">
+            <div class="screenshot-caption">🏆 Wave Voltooid &amp; Kluis Buit</div>
+          </div>
+        </div>
+        <button class="screenshots-nav-btn screenshots-nav-next" aria-label="Volgende">›</button>
+      </div>
+    </section>
+
+    <!-- CORE FEATURES -->
+    <section class="feature-columns reveal-on-scroll">
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🎯</div>
+        <h3>Laser Kanon &amp; 3D Flippers</h3>
+        <p>
+          Bepaal zelf de lanceerhoek van je munt met het precisie-kanon en gebruik de linker en rechter pinball-flippers om munten terug naar de 3x bumpers te schieten!
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">💣</div>
+        <h3>8 Speciale Munten</h3>
+        <p>
+          Wissel tactisch tussen Standard Gold, Heavy, Bouncy, Bomb Ball, Cluster Split, Magnetic, Phantom Ghost en Disco Laser om lastige peg-formaties te kraken.
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🏛️</div>
+        <h3>Arcade Vault &amp; Retro Thema's</h3>
+        <p>
+          Verzamel Vault Gold voor permanente upgrades (Extra Starting Drops, Gold Multiplier Boost, Peg Overclock, Nudge Power) en ontgrendel thema's zoals Cyber Neo, GameBoy 1989 en Vaporwave Sunset.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7 WORLDS HIGHLIGHT -->
+    <section class="worlds-highlight tilt-card reveal-on-scroll">
+      <div>
+        <h2>Van Classic Pyramid tot 60x Extreme Mode ⚡👑</h2>
+        <p style="color: #CBD5E1; font-size: 15.5px; line-height: 1.65;">
+          Kies tijdens elke worp je risiconiveau: <strong>SAFE</strong> voor stabiele multipliers, <strong>CLASSIC</strong> voor gebalanceerde 8x jackpots, of <strong>EXTREME</strong> voor waanzinnige 60x jackpots!
+        </p>
+        <ul class="worlds-list">
+          <li><span>🌆</span> <strong>Zone 1: Neon Boulevard</strong> — Klassieke 90s piramides &amp; neon kruisen</li>
+          <li><span>🪐</span> <strong>Zone 2: Cyber Galaxy</strong> — Kosmische asteroïden &amp; bewegende bumpers</li>
+          <li><span>🎰</span> <strong>Zone 3: Vegas Jackpot Vault</strong> — Dynamisch sluitende jackpot-mandjes</li>
+          <li><span>🕳️</span> <strong>Zone 4 &amp; 5: Quantum Void &amp; Volcanic Inferno</strong> — Zwarte gaten &amp; explosieve mijnen</li>
+          <li><span>⚡</span> <strong>Zone 6 &amp; 7: Tokyo Synth City &amp; Chrono Hyperspace</strong> — Eindstrijd tegen Emperor Omega</li>
+        </ul>
+      </div>
+      <div style="text-align: center; background: rgba(255, 255, 255, 0.06); padding: 32px 24px; border-radius: 20px; border: 1.5px solid rgba(255, 255, 255, 0.16);">
+        <div style="font-size: 54px; margin-bottom: 12px;">🪙⚡</div>
+        <div style="font-weight: 800; font-size: 18px; margin-bottom: 6px; color: #FFD13B;">100% Arcade Fair Play</div>
+        <div style="color: #CBD5E1; font-size: 13.5px;">Alle munten, fiches en Vault Gold zijn puur virtuele in-game arcade-punten zonder echt-geld gokken. Al je voortgang wordt lokaal op je eigen toestel bewaard.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Plinkzy</strong> (package ID: <code>com.waie.dropzy</code>) is een game van <strong>WAIE • [W▲!Ξ] Studio</strong>.
+      </p>
+      <p style="margin-top: 10px;">
+        <a href="/privacy.html#plinkzy-privacy" style="color: #4F46E5; font-weight: 600;">Privacybeleid</a> • <a href="/gutzy.html" style="color: #4F46E5; font-weight: 600;">Ontdek Gutzy</a> • <a href="mailto:info@waie.be" style="color: #4F46E5; font-weight: 600;">Contact</a> • <a href="/en/plinkzy.html" style="color: #0F172A; font-weight: 700; margin-left: 8px;">🇬🇧 English</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive & Motion Engine -->
+  <script src="assets/interactive.js"></script>
+</body>
+</html>
