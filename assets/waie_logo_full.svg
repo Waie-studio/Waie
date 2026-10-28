@@ -1,58 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" width="100%" height="100%">
-  <defs>
-    <linearGradient id="navViolet" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6"/>
-      <stop offset="60%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#3B82F6"/>
-    </linearGradient>
-    <linearGradient id="navGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFD13B"/>
-      <stop offset="100%" stop-color="#FF6584"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Left Icon Mark Container -->
-  <g transform="translate(6, 6)">
-    <!-- Tech Frame / Bauhaus Square -->
-    <rect x="0" y="0" width="64" height="64" rx="16" fill="#131B2E" stroke="#2B3859" stroke-width="1.5"/>
-    
-    <!-- Corner Accents -->
-    <path d="M 4 12 L 4 4 L 12 4" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
-    <path d="M 60 12 L 60 4 L 52 4" fill="none" stroke="#2ED573" stroke-width="2" stroke-linecap="round"/>
-    <path d="M 4 52 L 4 60 L 12 60" fill="none" stroke="#FF6584" stroke-width="2" stroke-linecap="round"/>
-    <path d="M 60 52 L 60 60 L 52 60" fill="none" stroke="#FFD13B" stroke-width="2" stroke-linecap="round"/>
-
-    <!-- Abstract Geometric Prismatic W -->
-    <polygon points="12,18 20,18 26,46 18,46" fill="url(#navViolet)"/>
-    <polygon points="18,46 26,46 32,26 27,26" fill="#3B82F6"/>
-    <polygon points="27,26 32,26 37,26 32,49" fill="#2ED573"/>
-    <polygon points="32,26 37,26 45,46 38,46" fill="#10B981"/>
-    <polygon points="43,18 51,18 45,46 38,46" fill="url(#navGold)"/>
-
-    <!-- Orbiting Glyphs -->
-    <circle cx="32" cy="12" r="2" fill="#FFFFFF"/>
-    <text x="32" y="14" font-family="monospace" font-size="8" fill="#FFD13B" text-anchor="middle">✦</text>
-  </g>
-
-  <!-- Typographic Lockup with Strange Characters -->
-  <g transform="translate(86, 12)">
-    <!-- Primary Avant-Garde Wordmark: W ▲ ! Ξ -->
-    <text x="0" y="32" font-family="'Righteous', 'Space Grotesk', sans-serif" font-size="32" font-weight="900" fill="#FFFFFF" letter-spacing="3">
-      W<tspan fill="#FFD13B">▲</tspan><tspan fill="#6366F1">!</tspan><tspan fill="#2ED573">Ξ</tspan>
-    </text>
-
-    <!-- Studio Badge & Eccentric Runes -->
-    <rect x="156" y="10" width="78" height="24" rx="7" fill="rgba(99, 102, 241, 0.15)" stroke="#6366F1" stroke-width="1.2"/>
-    <text x="195" y="26" font-family="'Space Grotesk', monospace, sans-serif" font-size="11" font-weight="900" fill="#A5B4FC" text-anchor="middle" letter-spacing="1.5">STUDIO</text>
-
-    <!-- Weird Tech Rune Sequence: [ ∿ • ⊞ • ◈ ] -->
-    <text x="246" y="26" font-family="monospace, sans-serif" font-size="13" font-weight="bold" fill="#94A3B8" letter-spacing="2">
-      [<tspan fill="#FF6584">∿</tspan><tspan fill="#475569">•</tspan><tspan fill="#2ED573">⊞</tspan><tspan fill="#475569">•</tspan><tspan fill="#FFD13B">◈</tspan>]
-    </text>
-
-    <!-- Subtitle / Meta Coordinate Line -->
-    <text x="2" y="48" font-family="'Space Grotesk', monospace, sans-serif" font-size="9" font-weight="700" fill="#64748B" letter-spacing="1.8">
-      CREATIVE LAB <tspan fill="#6366F1">//</tspan> APPS &amp; ALGORITHMS <tspan fill="#2ED573">//</tspan> [50°N 4°E]
-    </text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 375 924 272" width="100%" height="100%">
+  <!-- Official WAIE Horizontal Logo -->
+  <polygon points="67,394 120,394 162,554 207,394 256,394 301,554 344,394 396,394 328,628 276,628 231.5,468 188,628 134,628" fill="#000000"/>
+  <polygon points="493.5,393 359,628 628,628" fill="#3E0BE4"/>
+  <polygon points="656,394 711,394 703,550 664,550" fill="#FAED00"/>
+  <circle cx="683.5" cy="601" r="30.5" fill="#FAED00"/>
+  <rect x="758" y="394" width="198" height="48" fill="#000000"/>
+  <rect x="758" y="487" width="198" height="48" fill="#000000"/>
+  <rect x="758" y="580" width="198" height="48" fill="#000000"/>
 </svg>

@@ -1,52 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 72" width="100%" height="100%">
-  <!-- Pure Flat Graphic W ▲ ! Ξ Studio Logo -->
-
-  <!-- Icon Emblem (Left) -->
-  <g id="flat-mark" transform="translate(4, 8)">
-    <!-- Flat Minimalist Rounded Square Frame -->
-    <rect x="0" y="0" width="56" height="56" rx="14" fill="#0F172A"/>
-
-    <!-- 2x2 Grid Glyphs inside Frame -->
-    <!-- W (Top Left) -->
-    <path d="M 12 17 L 16 31 L 20 20 L 24 31 L 28 17" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <!-- ▲ (Top Right - Solar Yellow) -->
-    <polygon points="39,18 32,31 46,31" fill="#FFD13B"/>
-
-    <!-- ! (Bottom Left - Electric Mint) -->
-    <line x1="19" y1="39" x2="19" y2="46" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="19" cy="50" r="1.6" fill="#10B981"/>
-
-    <!-- Ξ (Bottom Right - Soft White / Sky Blue) -->
-    <line x1="33" y1="39" x2="45" y2="39" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="33" y1="44" x2="45" y2="44" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="33" y1="49" x2="45" y2="49" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round"/>
-  </g>
-
-  <!-- Wordmark Glyphs: W ▲ ! Ξ (Right) -->
-  <g transform="translate(76, 12)">
-    <!-- W -->
-    <path d="M 4 8 L 12 36 L 20 14 L 28 36 L 36 8" fill="none" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-    <!-- ▲ (Yellow / Coral Accent) -->
-    <polygon points="58,9 44,36 72,36" fill="#FFD13B" stroke="#0F172A" stroke-width="2.5" stroke-linejoin="round"/>
-
-    <!-- ! (Cobalt / Indigo Accent) -->
-    <rect x="85" y="8" width="5" height="18" rx="2.5" fill="#6366F1"/>
-    <circle cx="87.5" cy="33.5" r="3" fill="#6366F1"/>
-
-    <!-- Ξ (Cyber Mint Accent) -->
-    <rect x="103" y="10" width="22" height="4.5" rx="2" fill="#10B981"/>
-    <rect x="103" y="20" width="22" height="4.5" rx="2" fill="#10B981"/>
-    <rect x="103" y="30" width="22" height="4.5" rx="2" fill="#10B981"/>
-
-    <!-- STUDIO Tag & Micro-runes -->
-    <rect x="138" y="14" width="70" height="22" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.2"/>
-    <text x="173" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="1.5">STUDIO</text>
-
-    <!-- Subtitle -->
-    <text x="5" y="47" font-family="monospace, sans-serif" font-size="9" font-weight="700" fill="#64748B" letter-spacing="2">
-      CREATIVE APPS &amp; GAMES STUDIO
-    </text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 375 924 272" width="100%" height="100%">
+  <!-- Official WAIE Horizontal Logo -->
+  <!-- W (Black) -->
+  <polygon points="67,394 120,394 162,554 207,394 256,394 301,554 344,394 396,394 328,628 276,628 231.5,468 188,628 134,628" fill="#000000"/>
+  <!-- ▲ (Blue) -->
+  <polygon points="493.5,393 359,628 628,628" fill="#3E0BE4"/>
+  <!-- ! (Yellow) -->
+  <polygon points="656,394 711,394 703,550 664,550" fill="#FAED00"/>
+  <circle cx="683.5" cy="601" r="30.5" fill="#FAED00"/>
+  <!-- Ξ (Black) -->
+  <rect x="758" y="394" width="198" height="48" fill="#000000"/>
+  <rect x="758" y="487" width="198" height="48" fill="#000000"/>
+  <rect x="758" y="580" width="198" height="48" fill="#000000"/>
 </svg>

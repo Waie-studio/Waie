@@ -21,6 +21,24 @@ header, section, footer, .container {
   z-index: 1;
 }
 
+/* OFFICIAL WAIE LOGO IMAGE STYLING */
+.waie-logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo:hover .waie-logo-img {
+  transform: scale(1.04);
+}
+
+.waie-logo-chip-img {
+  height: 18px;
+  width: auto;
+  display: block;
+}
+
 /* MARQUEE STUDIO TICKER */
 .marquee-container {
   width: 100%;
