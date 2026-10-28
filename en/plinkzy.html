@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plinkzy ★ 90s Neon Coin-Drop &amp; Pinball • WAIE Studio</title>
-  <meta name="description" content="Plinkzy is a 90s neon arcade coin-drop and pinball game by WAIE Studio. Aim the precision laser cannon, control 3D flippers, unlock 8 special coins, and hit up to 60x Jackpots!">
+  <title>Plinkzy • Coin-Drop &amp; Pinball Roguelite • WAIE Studio</title>
+  <meta name="description" content="Plinkzy is a neon arcade coin-drop and pinball game by WAIE Studio. Aim the precision laser cannon, control flippers, unlock 8 special coins, and hit up to 60x Jackpots!">
   <link rel="icon" type="image/svg+xml" href="../assets/waie_flat_symbol.svg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Plinkzy ★ 90s Neon Coin-Drop &amp; Pinball">
-  <meta property="og:description" content="Aim the precision laser cannon, control 3D pinball flippers, unlock 8 special coins, and conquer 35 stages across 7 retro worlds. By WAIE.">
+  <meta property="og:title" content="Plinkzy • Coin-Drop &amp; Pinball Roguelite">
+  <meta property="og:description" content="Aim the precision laser cannon, control pinball flippers, unlock 8 special coins, and conquer 35 stages across 7 worlds. By WAIE.">
   <meta property="og:image" content="https://waie.be/assets/plinkzy_banner.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Righteous&family=Space+Grotesk:wght@600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Interactive & Motion CSS -->
   <link rel="stylesheet" href="../assets/interactive.css">
@@ -98,7 +98,7 @@
     .logo-text-group { display: flex; flex-direction: column; }
 
     .logo-glyphs {
-      font-family: 'Righteous', 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 21px;
       font-weight: 900;
       letter-spacing: 2px;
@@ -124,18 +124,19 @@
     }
 
     .app-icon-lg {
-      width: 122px;
-      height: 122px;
-      border-radius: 28px;
-      border: 3.5px solid var(--accent-yellow);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
+      width: 118px;
+      height: 118px;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
       margin-bottom: 24px;
     }
 
     h1.app-title {
-      font-family: 'Righteous', cursive;
-      font-size: 56px;
-      letter-spacing: 3px;
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      letter-spacing: -1px;
       margin-bottom: 12px;
       color: #0F172A;
     }
@@ -196,8 +197,8 @@
 
     .btn-apk {
       background: #0F172A;
-      color: #FFD13B;
-      border: 2px solid #0F172A;
+      color: #FFFFFF;
+      border: 1px solid #0F172A;
       padding: 14px 26px;
       border-radius: 14px;
       font-weight: 800;
@@ -205,11 +206,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 4px 4px 0px #FFD13B;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
       transition: transform 0.2s ease;
     }
 
-    .btn-apk:hover { transform: translate(-2px, -2px); }
+    .btn-apk:hover { transform: translateY(-2px); }
 
     .plinkzy-hero-grid {
       display: grid;
@@ -223,8 +224,8 @@
     .banner-showcase-box {
       border-radius: 22px;
       overflow: hidden;
-      border: 2.5px solid #0F172A;
-      box-shadow: 6px 6px 0px #0F172A;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
       background: #090614;
     }
 
@@ -321,19 +322,19 @@
     .feat-icon { font-size: 32px; margin-bottom: 16px; }
 
     .feat-card h3 {
-      font-family: 'Righteous', cursive;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
       font-size: 20px;
       margin-bottom: 10px;
       color: #0F172A;
-      letter-spacing: 0.5px;
     }
 
     .feat-card p { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
 
     .worlds-highlight {
-      background: linear-gradient(135deg, #090614 0%, #161130 60%, #230F35 100%);
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
       color: #FFFFFF;
-      border: 2.5px solid #0F172A;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 28px;
       padding: 44px;
       margin-bottom: 80px;
@@ -341,14 +342,15 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 40px;
       align-items: center;
-      box-shadow: 8px 8px 0px #0F172A;
+      box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.22);
     }
 
     .worlds-highlight h2 {
-      font-family: 'Righteous', cursive;
-      font-size: 32px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
       margin-bottom: 14px;
-      color: #FFD13B;
+      color: #FFFFFF;
     }
 
     .worlds-list { list-style: none; margin-top: 18px; }
@@ -417,11 +419,11 @@
   <div class="marquee-container" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-content">
-        <span class="marquee-item-highlight">✦ PLINKZY 90S NEON COIN DROP</span>
+        <span class="marquee-item-highlight">✦ PLINKZY COIN-DROP &amp; PINBALL</span>
         <span>•</span>
-        <span class="marquee-item-mint">LASER AIM CANNON &amp; 3D FLIPPERS</span>
+        <span class="marquee-item-mint">LASER AIM CANNON &amp; FLIPPERS</span>
         <span class="marquee-dot">●</span>
-        <span>35 STAGES IN 7 RETRO WORLDS</span>
+        <span>35 STAGES IN 7 WORLDS</span>
         <span class="marquee-dot">●</span>
         <span class="marquee-item-pink">CHAIN FEVER &amp; 60x JACKPOTS</span>
         <span class="marquee-dot">●</span>
@@ -431,11 +433,11 @@
         <span>•</span>
       </div>
       <div class="marquee-content">
-        <span class="marquee-item-highlight">✦ PLINKZY 90S NEON COIN DROP</span>
+        <span class="marquee-item-highlight">✦ PLINKZY COIN-DROP &amp; PINBALL</span>
         <span>•</span>
-        <span class="marquee-item-mint">LASER AIM CANNON &amp; 3D FLIPPERS</span>
+        <span class="marquee-item-mint">LASER AIM CANNON &amp; FLIPPERS</span>
         <span class="marquee-dot">●</span>
-        <span>35 STAGES IN 7 RETRO WORLDS</span>
+        <span>35 STAGES IN 7 WORLDS</span>
         <span class="marquee-dot">●</span>
         <span class="marquee-item-pink">CHAIN FEVER &amp; 60x JACKPOTS</span>
         <span class="marquee-dot">●</span>
@@ -450,9 +452,9 @@
   <div class="container">
     <section class="hero-app">
       <img src="../assets/plinkzy_icon.jpg" alt="Plinkzy Logo" class="app-icon-lg tilt-card">
-      <h1 class="app-title">PLINKZY</h1>
+      <h1 class="app-title">Plinkzy</h1>
       <p class="app-tagline">
-        90s Neon Coin-Drop &amp; Pinball Roguelite. Aim your shots with the precision laser cannon, rescue falling coins with 3D flippers, trigger Chain Fever, and conquer 35 stages!
+        Coin-Drop &amp; Pinball Roguelite. Aim your shots with the precision laser cannon, rescue falling coins with flippers, trigger Chain Fever, and conquer 35 stages!
       </p>
 
       <div class="badge-bar">
@@ -476,7 +478,7 @@
       <div class="plinkzy-hero-grid">
         <div>
           <div class="banner-showcase-box tilt-card" style="margin-bottom: 18px;">
-            <img src="../assets/plinkzy_banner.jpg" alt="Plinkzy 90s Neon Coin Drop Banner">
+            <img src="../assets/plinkzy_banner.jpg" alt="Plinkzy Coin-Drop & Pinball Banner">
           </div>
           <div style="background: #FFFFFF; border: 1.5px solid var(--border); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-sm);">
             <div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 900; color: #4F46E5; text-transform: uppercase; margin-bottom: 4px;">
@@ -528,8 +530,8 @@
         <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Previous">‹</button>
         <div class="screenshots-scroll">
           <div class="screenshot-card tilt-card" title="Click to enlarge">
-            <img src="../assets/screenshots/01_plinkzy_splash.png" alt="Plinkzy 90s Arcade Splash Screen" loading="lazy">
-            <div class="screenshot-caption">🕹️ Plinkzy 90s Arcade Intro</div>
+            <img src="../assets/screenshots/01_plinkzy_splash.png" alt="Plinkzy Arcade Splash Screen" loading="lazy">
+            <div class="screenshot-caption">🕹️ Plinkzy Arcade Intro</div>
           </div>
           <div class="screenshot-card tilt-card" title="Click to enlarge">
             <img src="../assets/screenshots/02_plinkzy_gameplay.png" alt="Plinkzy Wave 1 Classic Pyramid" loading="lazy">
@@ -591,7 +593,7 @@
           Pick your risk profile on any drop: <strong>SAFE</strong> for steady returns, <strong>CLASSIC</strong> for balanced 8x jackpots, or <strong>EXTREME</strong> for massive 60x jackpots!
         </p>
         <ul class="worlds-list">
-          <li><span>🌆</span> <strong>Zone 1: Neon Boulevard</strong> — Classic 90s pyramids &amp; neon crosses</li>
+          <li><span>🌆</span> <strong>Zone 1: Neon Boulevard</strong> — Classic pyramids &amp; neon crosses</li>
           <li><span>🪐</span> <strong>Zone 2: Cyber Galaxy</strong> — Cosmic asteroids &amp; moving bumpers</li>
           <li><span>🎰</span> <strong>Zone 3: Vegas Jackpot Vault</strong> — Dynamically closing jackpot gates</li>
           <li><span>🕳️</span> <strong>Zone 4 &amp; 5: Quantum Void &amp; Volcanic Inferno</strong> — Gravity wells &amp; explosive mines</li>
