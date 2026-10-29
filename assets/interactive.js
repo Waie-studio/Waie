@@ -1146,6 +1146,403 @@
   }
 
   /* ---------------------------------------------------------
+     10. KROMATIK LIVE OPTICAL COLOR & LASER PUZZLE (#kromatik-mini-canvas)
+  --------------------------------------------------------- */
+  function initKromatikMiniPuzzle() {
+    const canvas = document.getElementById('kromatik-mini-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const COLORS = {
+      red: '#E55D65',
+      yellow: '#F2C65F',
+      blue: '#5496D8',
+      orange: '#EB8538',
+      purple: '#B363DF',
+      green: '#56BF7C'
+    };
+
+    const WAVES = [
+      {
+        name: 'WAVE 1 • MIX COLORS',
+        hintNL: 'Plaats Rood naast Blauw (Paars) en Geel onder Blauw (Groen)!',
+        hintEN: 'Place Red next to Blue (Purple) and Yellow below Blue (Green)!',
+        gems: { '1,2': 'blue', '1,1': 'red' },
+        locked: { '1,2': true },
+        mirrors: {},
+        targets: [
+          { r: 0, c: 2, color: 'green' },
+          { r: 3, c: 2, color: 'green' },
+          { r: 1, c: 0, color: 'purple' },
+          { r: 1, c: 3, color: 'purple' }
+        ]
+      },
+      {
+        name: 'WAVE 2 • 90° MIRRORS',
+        hintNL: 'Plaats Geel & Blauw naast elkaar en tik op de spiegel om Groen omhoog te kaatsen!',
+        hintEN: 'Place Yellow & Blue side by side and tap the mirror to bend Green upward!',
+        gems: { '2,1': 'yellow', '2,2': 'blue' },
+        locked: { '2,1': true },
+        mirrors: { '2,3': '\\' },
+        targets: [
+          { r: 2, c: 0, color: 'green' },
+          { r: 0, c: 3, color: 'green' }
+        ]
+      },
+      {
+        name: 'WAVE 3 • THREE WAVES',
+        hintNL: 'Combineer Rood + Geel (Oranje) en Rood + Blauw (Paars) om alle 4 doelen te raken!',
+        hintEN: 'Combine Red + Yellow (Orange) and Red + Blue (Purple) to pop all 4 targets!',
+        gems: { '1,1': 'red', '1,2': 'yellow' },
+        locked: { '1,1': true },
+        mirrors: {},
+        targets: [
+          { r: 1, c: 0, color: 'orange' },
+          { r: 1, c: 3, color: 'orange' },
+          { r: 0, c: 1, color: 'purple' },
+          { r: 3, c: 1, color: 'purple' }
+        ]
+      }
+    ];
+
+    let currentWaveIdx = 0;
+    let selectedGem = 'yellow';
+    let gems = {};
+    let locked = {};
+    let mirrors = {};
+    let targets = [];
+    let solved = false;
+    let popParticles = [];
+
+    const isEN = document.documentElement.lang === 'en';
+    const statusEl = document.getElementById('kromatik-status-text');
+    const waveBtns = document.querySelectorAll('.kromatik-wave-btn');
+    const gemBtns = document.querySelectorAll('.kromatik-gem-btn');
+    const resetBtn = document.getElementById('kromatik-btn-reset');
+    const nextBtn = document.getElementById('kromatik-btn-next');
+
+    function loadWave(idx) {
+      currentWaveIdx = (idx + WAVES.length) % WAVES.length;
+      const w = WAVES[currentWaveIdx];
+      gems = Object.assign({}, w.gems);
+      locked = Object.assign({}, w.locked);
+      mirrors = Object.assign({}, w.mirrors);
+      targets = w.targets.map(t => Object.assign({ hit: false }, t));
+      solved = false;
+      waveBtns.forEach((b, i) => b.classList.toggle('is-active', i === currentWaveIdx));
+      updateStatus();
+    }
+
+    function mixColor(c1, c2) {
+      const pair = [c1, c2].sort().join('+');
+      if (pair === 'red+yellow') return 'orange';
+      if (pair === 'blue+red') return 'purple';
+      if (pair === 'blue+yellow') return 'green';
+      return null;
+    }
+
+    function computeBeams() {
+      const beams = [];
+      targets.forEach(t => { t.hit = false; });
+
+      function traceRay(startR, startC, dr, dc, color) {
+        let r = startR;
+        let c = startC;
+        const points = [{ r, c }];
+        let steps = 0;
+        while (steps < 16) {
+          steps++;
+          const nr = r + dr;
+          const nc = c + dc;
+          if (nr < 0 || nr > 3 || nc < 0 || nc > 3) break;
+          points.push({ r: nr, c: nc });
+
+          // Check target hit
+          targets.forEach(t => {
+            if (t.r === nr && t.c === nc && t.color === color) {
+              t.hit = true;
+            }
+          });
+
+          // Stop if hitting another gem
+          if (gems[`${nr},${nc}`]) break;
+
+          // Reflect if hitting a mirror
+          const m = mirrors[`${nr},${nc}`];
+          if (m === '/') {
+            const oldDr = dr;
+            dr = -dc;
+            dc = -oldDr;
+          } else if (m === '\\') {
+            const oldDr = dr;
+            dr = dc;
+            dc = oldDr;
+          }
+          r = nr;
+          c = nc;
+        }
+        if (points.length > 1) {
+          beams.push({ color, points });
+        }
+      }
+
+      // Horizontal adjacent pairs
+      for (let r = 0; r < 4; r++) {
+        for (let c = 0; c < 3; c++) {
+          const g1 = gems[`${r},${c}`];
+          const g2 = gems[`${r},${c + 1}`];
+          if (g1 && g2) {
+            const mixed = mixColor(g1, g2);
+            if (mixed) {
+              traceRay(r, c, 0, -1, mixed);
+              traceRay(r, c + 1, 0, 1, mixed);
+            }
+          }
+        }
+      }
+
+      // Vertical adjacent pairs
+      for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 4; c++) {
+          const g1 = gems[`${r},${c}`];
+          const g2 = gems[`${r + 1},${c}`];
+          if (g1 && g2) {
+            const mixed = mixColor(g1, g2);
+            if (mixed) {
+              traceRay(r, c, -1, 0, mixed);
+              traceRay(r + 1, c, 1, 0, mixed);
+            }
+          }
+        }
+      }
+
+      const allHit = targets.length > 0 && targets.every(t => t.hit);
+      if (allHit && !solved) {
+        solved = true;
+        targets.forEach(t => {
+          const pos = cellCenter(t.r, t.c);
+          for (let i = 0; i < 10; i++) {
+            const ang = (Math.PI * 2 * i) / 10;
+            popParticles.push({
+              x: pos.x,
+              y: pos.y,
+              vx: Math.cos(ang) * 2.2,
+              vy: Math.sin(ang) * 2.2,
+              color: COLORS[t.color],
+              alpha: 1
+            });
+          }
+        });
+        updateStatus();
+      } else if (!allHit) {
+        solved = false;
+      }
+
+      return beams;
+    }
+
+    function updateStatus() {
+      if (!statusEl) return;
+      const w = WAVES[currentWaveIdx];
+      if (solved) {
+        statusEl.innerHTML = isEN
+          ? '✨ <strong style="color:#15803D;">Wave Cleared!</strong> All target rings activated — click Next Wave!'
+          : '✨ <strong style="color:#15803D;">Golf Voltooid!</strong> Alle doelringen geraakt — klik op Volgende Golf!';
+      } else {
+        statusEl.textContent = isEN ? w.hintEN : w.hintNL;
+      }
+    }
+
+    function cellCenter(r, c) {
+      const pad = 12;
+      const gap = 10;
+      const cellSize = (canvas.width - pad * 2 - gap * 3) / 4;
+      return {
+        x: pad + c * (cellSize + gap) + cellSize / 2,
+        y: pad + r * (cellSize + gap) + cellSize / 2,
+        size: cellSize
+      };
+    }
+
+    function drawRoundRect(x, y, w, h, rad) {
+      ctx.beginPath();
+      ctx.roundRect(x, y, w, h, rad);
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const beams = computeBeams();
+
+      // 1. Draw 4x4 grid cells
+      for (let r = 0; r < 4; r++) {
+        for (let c = 0; c < 4; c++) {
+          const pos = cellCenter(r, c);
+          const half = pos.size / 2;
+          ctx.save();
+          drawRoundRect(pos.x - half, pos.y - half, pos.size, pos.size, 14);
+          ctx.fillStyle = '#DCE6E1';
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // 2. Draw laser beams
+      beams.forEach(b => {
+        ctx.save();
+        ctx.beginPath();
+        b.points.forEach((pt, idx) => {
+          const p = cellCenter(pt.r, pt.c);
+          if (idx === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+        ctx.strokeStyle = COLORS[b.color];
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // 3. Draw target rings
+      targets.forEach(t => {
+        const pos = cellCenter(t.r, t.c);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, pos.size * 0.34, 0, Math.PI * 2);
+        ctx.strokeStyle = COLORS[t.color];
+        ctx.lineWidth = t.hit ? 7 : 5;
+        if (t.hit) {
+          ctx.fillStyle = COLORS[t.color] + '28';
+          ctx.fill();
+        }
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // 4. Draw mirrors
+      Object.keys(mirrors).forEach(key => {
+        const [r, c] = key.split(',').map(Number);
+        const pos = cellCenter(r, c);
+        const m = mirrors[key];
+        const len = pos.size * 0.28;
+        ctx.save();
+        ctx.beginPath();
+        if (m === '/') {
+          ctx.moveTo(pos.x - len, pos.y + len);
+          ctx.lineTo(pos.x + len, pos.y - len);
+        } else {
+          ctx.moveTo(pos.x - len, pos.y - len);
+          ctx.lineTo(pos.x + len, pos.y + len);
+        }
+        ctx.strokeStyle = '#1E2E2C';
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // 5. Draw placed primary gems
+      Object.keys(gems).forEach(key => {
+        const [r, c] = key.split(',').map(Number);
+        const colorName = gems[key];
+        const pos = cellCenter(r, c);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, pos.size * 0.38, 0, Math.PI * 2);
+        ctx.fillStyle = COLORS[colorName];
+        ctx.fill();
+        ctx.lineWidth = 3.5;
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.stroke();
+        if (locked[key]) {
+          ctx.beginPath();
+          ctx.arc(pos.x, pos.y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,0.75)';
+          ctx.fill();
+        }
+        ctx.restore();
+      });
+
+      // 6. Particles
+      for (let i = popParticles.length - 1; i >= 0; i--) {
+        const p = popParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= 0.03;
+        if (p.alpha <= 0) {
+          popParticles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(render);
+    }
+
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+      const y = (e.clientY - rect.top) * (canvas.height / rect.height);
+
+      for (let r = 0; r < 4; r++) {
+        for (let c = 0; c < 4; c++) {
+          const pos = cellCenter(r, c);
+          const half = pos.size / 2;
+          if (x >= pos.x - half && x <= pos.x + half && y >= pos.y - half && y <= pos.y + half) {
+            const key = `${r},${c}`;
+            // Check if mirror -> toggle 90 deg
+            if (mirrors[key]) {
+              mirrors[key] = mirrors[key] === '/' ? '\\' : '/';
+              computeBeams();
+              updateStatus();
+              return;
+            }
+            // Don't place on target rings or locked gems
+            if (locked[key]) return;
+            if (targets.some(t => t.r === r && t.c === c)) return;
+
+            if (gems[key] === selectedGem) {
+              delete gems[key];
+            } else {
+              gems[key] = selectedGem;
+            }
+            computeBeams();
+            updateStatus();
+            return;
+          }
+        }
+      }
+    });
+
+    gemBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedGem = btn.getAttribute('data-gem') || 'red';
+        gemBtns.forEach(b => b.classList.toggle('is-selected', b === btn));
+      });
+    });
+
+    waveBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', () => loadWave(idx));
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => loadWave(currentWaveIdx));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => loadWave(currentWaveIdx + 1));
+    }
+
+    loadWave(0);
+    requestAnimationFrame(render);
+  }
+
+  /* ---------------------------------------------------------
      INIT ON DOM READY
   --------------------------------------------------------- */
   function initAll() {
@@ -1156,6 +1553,7 @@
     initScreenshotsAndLightbox();
     initBackgroundCanvas();
     initPlinkzyMiniArcade();
+    initKromatikMiniPuzzle();
   }
 
   if (document.readyState === 'loading') {

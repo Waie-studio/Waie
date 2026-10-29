@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kromatik ★ Optical Color &amp; Laser Puzzle • WAIE Studio</title>
+  <meta name="description" content="Kromatik is a relaxing yet clever optical color and laser puzzle game by WAIE Studio. Mix primary gems, tilt mirrors 90°, and journey through 5 crystal worlds.">
+  <link rel="icon" type="image/svg+xml" href="../assets/waie_flat_symbol.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kromatik ★ Optical Color &amp; Laser Puzzle">
+  <meta property="og:description" content="Relaxing optical puzzle: mix primary colors, tilt mirrors, and shoot laser beams across 5 crystal worlds. By WAIE Studio.">
+  <meta property="og:image" content="https://waie.be/assets/kromatik_banner.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Interactive & Motion CSS -->
+  <link rel="stylesheet" href="../assets/interactive.css">
+
+  <style>
+    :root {
+      --bg: #F4F8F6;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #E8F1EC;
+      --border: #CBE0D6;
+      --text: #1E302E;
+      --text-muted: #526965;
+      --accent-sage: #283836;
+      --accent-mint: #56BF7C;
+      --shadow-sm: 0 2px 8px rgba(30, 48, 46, 0.04);
+      --shadow-md: 0 12px 32px rgba(30, 48, 46, 0.06);
+      --shadow-lg: 0 22px 48px rgba(30, 48, 46, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(86, 191, 124, 0.07) 0%, transparent 42%),
+        radial-gradient(circle at 85% 65%, rgba(84, 150, 216, 0.07) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: rgba(244, 248, 246, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .hero-app {
+      padding: 56px 0 40px;
+      text-align: center;
+    }
+
+    .app-icon-lg {
+      width: 114px;
+      height: 114px;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px -10px rgba(30, 48, 46, 0.16);
+      margin-bottom: 22px;
+    }
+
+    h1.app-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #E55D65 0%, #EB8538 25%, #F2C65F 48%, #56BF7C 72%, #5496D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .app-tagline {
+      font-size: 19.5px;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 24px;
+      font-weight: 500;
+    }
+
+    .lang-pills {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .lang-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-apk {
+      background: #283836;
+      color: #FFFFFF;
+      padding: 15px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #1E2E2C;
+      box-shadow: 0 12px 28px -6px rgba(40, 56, 54, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-apk:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px -6px rgba(40, 56, 54, 0.45);
+    }
+
+    .btn-playstore {
+      background: linear-gradient(135deg, #56BF7C, #3EA363);
+      color: #FFFFFF;
+      padding: 15px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(86, 191, 124, 0.28);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-playstore:hover {
+      transform: translateY(-2px);
+    }
+
+    .kromatik-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 70px;
+      text-align: left;
+    }
+
+    .banner-showcase-box {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      background: #D6E4DE;
+    }
+
+    .banner-showcase-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .feature-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+
+    .feat-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 32px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feat-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .feat-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .feat-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .worlds-highlight {
+      background: #283836;
+      color: #FFFFFF;
+      border: 1px solid #374D4A;
+      border-radius: 28px;
+      padding: 44px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .worlds-highlight h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+      color: #66C48A;
+    }
+
+    .worlds-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .worlds-list li {
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #E2ECE8;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #3EA363;
+      margin-bottom: 8px;
+    }
+
+    .section-headline {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #B8CEC4 transparent;
+    }
+
+    .screenshot-card {
+      flex: 0 0 230px;
+      scroll-snap-align: start;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 6px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: #283836;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 8px 4px 4px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-align: center;
+      background: #FFFFFF;
+    }
+
+    @media (max-width: 900px) {
+      .kromatik-hero-grid { grid-template-columns: 1fr; }
+      .feature-columns { grid-template-columns: 1fr; }
+      .worlds-highlight { grid-template-columns: 1fr; padding: 28px; }
+      h1.app-title { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/en/" class="logo" aria-label="WAIE Home">
+        <img src="../assets/waie_logo.png" alt="WAIE" class="waie-logo-img">
+      </a>
+      <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
+        <a href="/en/" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">← All Apps &amp; Games</a>
+        <a href="/en/plinkzy.html" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Plinkzy</a>
+        <a href="/en/gutzy.html" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Gutzy</a>
+        <a href="/en/privacy.html#kromatik-privacy" style="font-size: 14px; font-weight: 700; color: var(--text-muted);">Privacy Policy</a>
+        <a href="/kromatik.html" class="lang-switch-btn" title="Schakel naar Nederlands">
+          <span class="lang-switch-flag">🇳🇱</span>
+          <span class="lang-switch-code">NL</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- DYNAMIC STUDIO MARQUEE TICKER -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ KROMATIK: COLOR &amp; LASER PUZZLE</span>
+        <span>•</span>
+        <span class="marquee-item-mint">MIX RED, YELLOW &amp; BLUE INTO LASERS</span>
+        <span class="marquee-dot">●</span>
+        <span>DYNAMIC 3-WAVE LEVELS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">90° TILT MIRRORS &amp; PRISM SPLITTERS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">5 CRYSTAL WORLDS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">BY WAIE STUDIO</span>
+        <span>•</span>
+      </div>
+      <div class="marquee-content">
+        <span class="marquee-item-highlight">✦ KROMATIK: COLOR &amp; LASER PUZZLE</span>
+        <span>•</span>
+        <span class="marquee-item-mint">MIX RED, YELLOW &amp; BLUE INTO LASERS</span>
+        <span class="marquee-dot">●</span>
+        <span>DYNAMIC 3-WAVE LEVELS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-pink">90° TILT MIRRORS &amp; PRISM SPLITTERS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-accent">5 CRYSTAL WORLDS</span>
+        <span class="marquee-dot">●</span>
+        <span class="marquee-item-highlight">BY WAIE STUDIO</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="hero-app">
+      <img src="../assets/kromatik_icon.png" alt="Kromatik Logo" class="app-icon-lg tilt-card">
+      <div><h1 class="app-title">KROMATIK</h1></div>
+      <p class="app-tagline">
+        A relaxing yet clever logic puzzle game of color alchemy and light refraction. Place primary gems side by side to form optical mixing lenses, tilt mirrors 90°, and journey across 5 crystal worlds.
+      </p>
+
+      <div class="lang-pills">
+        <span class="lang-pill">🇬🇧 English</span>
+        <span class="lang-pill">🇳🇱 Nederlands</span>
+        <span class="lang-pill">🇫🇷 Français</span>
+        <span class="lang-pill">🇩🇪 Deutsch</span>
+        <span class="lang-pill">🇪🇸 Español</span>
+      </div>
+
+      <div class="badge-bar">
+        <span class="pill">🔴🟡🔵 Optical Mixing Lenses</span>
+        <span class="pill">🌊 3 Dynamic Waves Per Level</span>
+        <span class="pill">🪞 90° Tilt Mirrors &amp; Splitters</span>
+        <span class="pill">💎 5 Worlds + Free Kroma-Field</span>
+        <span class="pill">🛡️ 100% On-Device &amp; Zero Trackers</span>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="../assets/kromatik-release.apk" download class="btn-apk">
+          <span>📦</span> Download Android APK (v1.0.0)
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.waie.kromatik" target="_blank" class="btn-playstore">
+          <span>▶</span> Google Play Store
+        </a>
+      </div>
+
+      <!-- BANNER + LIVE INTERACTIVE KROMATIK BOARD -->
+      <div class="kromatik-hero-grid">
+        <div>
+          <div class="banner-showcase-box tilt-card" style="margin-bottom: 18px;">
+            <img src="../assets/kromatik_banner.png" alt="Kromatik Optical Color & Laser Puzzle Banner">
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 800; color: #283836; text-transform: uppercase; margin-bottom: 4px;">
+              ✨ Play Kromatik live right in your browser!
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin: 0;">
+              Pick a primary gem below (<strong>Red</strong>, <strong>Yellow</strong>, or <strong>Blue</strong>) and click on the 4×4 board to place gems side by side. Any two adjacent primary gems automatically fire a mixed laser beam (Orange, Purple, or Green) across that row or column!
+            </p>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE KROMATIK MINI PUZZLE STAGE -->
+        <div class="kromatik-stage-card">
+          <div class="kromatik-stage-header">
+            <span>🔮 KROMATIK • LIVE PUZZLE</span>
+            <div class="kromatik-wave-pills">
+              <button type="button" class="kromatik-wave-btn is-active" data-wave="0">WAVE 1</button>
+              <button type="button" class="kromatik-wave-btn" data-wave="1">WAVE 2</button>
+              <button type="button" class="kromatik-wave-btn" data-wave="2">WAVE 3</button>
+            </div>
+          </div>
+
+          <div class="kromatik-legend-bar">
+            <span>🔴 + 🟡 = <strong style="color:#EB8538;">Orange</strong></span>
+            <span>🔴 + 🔵 = <strong style="color:#B363DF;">Purple</strong></span>
+            <span>🟡 + 🔵 = <strong style="color:#56BF7C;">Green</strong></span>
+          </div>
+
+          <div class="kromatik-board-wrap">
+            <canvas id="kromatik-mini-canvas" class="kromatik-canvas" width="320" height="320" title="Click a cell to place a gem or tilt a mirror!"></canvas>
+          </div>
+
+          <div class="kromatik-tray-bar">
+            <div class="kromatik-gem-selectors">
+              <button type="button" class="kromatik-gem-btn kromatik-gem-red" data-gem="red" title="Red Gem"></button>
+              <button type="button" class="kromatik-gem-btn kromatik-gem-yellow is-selected" data-gem="yellow" title="Yellow Gem"></button>
+              <button type="button" class="kromatik-gem-btn kromatik-gem-blue" data-gem="blue" title="Blue Gem"></button>
+            </div>
+            <div class="kromatik-action-btns">
+              <button type="button" id="kromatik-btn-reset" class="kromatik-mini-btn">↺ Reset</button>
+              <button type="button" id="kromatik-btn-next" class="kromatik-mini-btn" style="background:#56BF7C; color:#0E2918;">Next ➔</button>
+            </div>
+          </div>
+
+          <div id="kromatik-status-text" class="kromatik-status-bar">
+            Place Yellow below Blue to activate the green target rings!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-GAME SCREENSHOTS GALLERY -->
+    <section class="screenshots-section reveal-on-scroll" style="margin-bottom: 70px;">
+      <div class="section-header">
+        <div class="section-title">In-Game Screenshots</div>
+        <h2 class="section-headline">Minimalist Aesthetics &amp; Optical Depth</h2>
+        <p style="color: var(--text-muted); font-size: 15px; margin-top: 8px;">Click any screenshot to enlarge or swipe through the core mechanics.</p>
+      </div>
+
+      <div class="screenshots-wrapper">
+        <button class="screenshots-nav-btn screenshots-nav-prev" aria-label="Previous">‹</button>
+        <div class="screenshots-scroll">
+          <div class="screenshot-card tilt-card" title="Click to enlarge">
+            <img src="../assets/screenshots/01_kromatik_mix_colors.png" alt="Kromatik Mix Colors & Shoot Lasers" loading="lazy">
+            <div class="screenshot-caption">🎨 Mix Colors &amp; Lasers</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Click to enlarge">
+            <img src="../assets/screenshots/02_kromatik_three_waves.png" alt="Kromatik 3 Waves Per Level" loading="lazy">
+            <div class="screenshot-caption">🌊 3 Waves Per Level</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Click to enlarge">
+            <img src="../assets/screenshots/03_kromatik_mirrors_splitters.png" alt="Kromatik Mirrors, Splitters & Locks" loading="lazy">
+            <div class="screenshot-caption">🪞 Mirrors &amp; Splitters</div>
+          </div>
+          <div class="screenshot-card tilt-card" title="Click to enlarge">
+            <img src="../assets/screenshots/04_kromatik_endless_worlds.png" alt="Kromatik 5 Worlds & Infinite Levels" loading="lazy">
+            <div class="screenshot-caption">💎 5 Worlds &amp; Cross-Alchemy</div>
+          </div>
+        </div>
+        <button class="screenshots-nav-btn screenshots-nav-next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <!-- CORE FEATURES -->
+    <section class="feature-columns reveal-on-scroll">
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🔮</div>
+        <h3>Mixing Lenses &amp; Cross-Alchemy</h3>
+        <p>
+          Combine Red, Yellow, and Blue into Orange, Purple, and Green beams, or intersect two beams on a single tile to forge Pink, Gold-Brown, and Cyan crystals.
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🪞</div>
+        <h3>90° Tilt Mirrors &amp; Splitters</h3>
+        <p>
+          Tap mirrors directly on the board to bend laser beams 90° around corners, or use Prism Splitters to divide a single beam into two directions at once.
+        </p>
+      </div>
+
+      <div class="feat-card tilt-card">
+        <div class="feat-icon">🌊</div>
+        <h3>Dynamic 3-Wave Progression</h3>
+        <p>
+          Every level flows seamlessly through 3 waves where hit target rings pop with tactile animations and make way for fresh optical puzzles.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5 WORLDS HIGHLIGHT -->
+    <section class="worlds-highlight tilt-card reveal-on-scroll">
+      <div>
+        <h2>5 Handcrafted Crystal Worlds &amp; Free Kroma-Field ✨</h2>
+        <p style="color: #D0DFD8; font-size: 15.5px; line-height: 1.65;">
+          Journey through 40 handcrafted levels across 5 atmospheric crystal worlds, plus a Daily Challenge and an unlimited Free Kroma-Field generator (up to 7×7 and 8×8 grandmaster grids).
+        </p>
+        <ul class="worlds-list">
+          <li><span>☀️</span> <strong>World 1: Sun Valley</strong> — Mastering primary mixing lenses</li>
+          <li><span>🪞</span> <strong>World 2: Mirror Sanctuary</strong> — 90° reflections &amp; corner routing</li>
+          <li><span>💎</span> <strong>World 3: Prism Caverns</strong> — Beam splitters &amp; dual targets</li>
+          <li><span>⚗️</span> <strong>World 4: Alchemy Observatory</strong> — Cross-beams for Pink, Brown &amp; Cyan</li>
+          <li><span>👑</span> <strong>World 5: Grandmaster Citadel</strong> — Intricate optical chain reactions</li>
+        </ul>
+      </div>
+      <div style="text-align: center; background: rgba(255, 255, 255, 0.07); padding: 32px 24px; border-radius: 20px; border: 1.5px solid rgba(255, 255, 255, 0.16);">
+        <div style="font-size: 54px; margin-bottom: 12px;">🧘‍♂️✨</div>
+        <div style="font-weight: 800; font-size: 18px; margin-bottom: 6px; color: #66C48A;">Relaxing &amp; Privacy-First</div>
+        <div style="color: #D0DFD8; font-size: 13.5px;">Zero time pressure, zero personal data collection, and zero external trackers. All stars, XP ranks, and progress stay 100% locally on your device.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Kromatik</strong> (package ID: <code>com.waie.kromatik</code>) is a game by <strong>WAIE Studio</strong>.
+      </p>
+      <p style="margin-top: 10px;">
+        <a href="/en/privacy.html#kromatik-privacy" style="color: #283836; font-weight: 700;">Privacy Policy</a> • <a href="/en/plinkzy.html" style="color: #283836; font-weight: 700;">Explore Plinkzy</a> • <a href="/en/gutzy.html" style="color: #283836; font-weight: 700;">Explore Gutzy</a> • <a href="mailto:info@waie.be" style="color: #283836; font-weight: 700;">Contact</a> • <a href="/kromatik.html" style="color: #0F172A; font-weight: 800; margin-left: 8px;">🇳🇱 Nederlands</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive & Motion Engine -->
+  <script src="../assets/interactive.js"></script>
+</body>
+</html>
