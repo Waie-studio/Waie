@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Agreement &amp; Terms of Service — Kromatik, Plinkzy &amp; Gutzy (WAIE Studio)</title>
+  <meta name="description" content="Multilingual Service Agreement, Terms of Service, and End-User License Agreement (EULA) in 5 languages (EN, NL, FR, ES, DE) for WAIE Studio apps." />
+  <link rel="icon" type="image/svg+xml" href="assets/waie_flat_symbol.svg" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+      background: #d6e4de;
+      color: #263838;
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.65;
+    }
+    .card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #f4f8f6;
+      border-radius: 26px;
+      padding: 36px 34px;
+      box-shadow: 0 12px 34px rgba(38, 56, 56, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+      border-bottom: 1.5px solid #d5e3dc;
+    }
+    .lang-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .lang-btn {
+      background: #e0ebe5;
+      color: #263838;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .lang-btn:hover { background: #d0dfd8; }
+    .lang-btn.active {
+      background: #283836;
+      color: #ffffff;
+    }
+    h1 { margin-top: 0; color: #1e2e2c; font-size: 28px; }
+    h2 { color: #283836; margin-top: 26px; font-size: 18.5px; border-left: 4px solid #56bf7c; padding-left: 12px; }
+    p, li { color: #374d4a; font-size: 15px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    .footer-nav {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1.5px solid #d5e3dc;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .footer-nav a { color: #283836; text-decoration: none; }
+    .footer-nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-bar">
+      <a href="/" style="display:inline-flex;align-items:center;text-decoration:none;color:#1e2e2c;font-weight:900;font-size:18px;">
+        <img src="assets/waie_logo.png" alt="WAIE Studio" style="height:26px;width:auto;" onerror="this.style.display='none'" />
+      </a>
+      <div class="lang-bar">
+        <button class="lang-btn active" onclick="setLang('en', this)">🇬🇧 English</button>
+        <button class="lang-btn" onclick="setLang('nl', this)">🇳🇱 Nederlands</button>
+        <button class="lang-btn" onclick="setLang('fr', this)">🇫🇷 Français</button>
+        <button class="lang-btn" onclick="setLang('es', this)">🇪🇸 Español</button>
+        <button class="lang-btn" onclick="setLang('de', this)">🇩🇪 Deutsch</button>
+      </div>
+    </div>
+
+    <div id="termsContent"></div>
+
+    <div class="footer-nav">
+      <a href="/">← WAIE Studio Website</a>
+      <a href="/privacy.html">🔒 Privacy Policy / Privacybeleid</a>
+      <a href="mailto:info@waie.be">✉️ info@waie.be</a>
+    </div>
+  </div>
+
+  <script>
+    const TERMS = {
+      en: `
+        <h1>Service Agreement &amp; Terms of Service (EULA)</h1>
+        <p><strong>Last updated:</strong> November 5, 2026<br/>
+        <strong>Developer:</strong> WAIE Studio — Applicable to <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>), and <strong>Gutzy</strong> (<code>com.gutzy</code>).</p>
+
+        <h2>1. Acceptance of Terms &amp; License Grant</h2>
+        <p>By downloading, installing, or using any mobile application or web service developed by <strong>WAIE Studio</strong>, you agree to this Service Agreement. WAIE Studio grants you a personal, limited, non-exclusive, non-transferable, and revocable license to use the application on your personal device strictly for non-commercial entertainment and self-reflection purposes. You may not copy, modify, reverse-engineer, decompile, redistribute, or use unauthorized cheats or modified APKs.</p>
+
+        <h2>2. In-App Purchases &amp; Virtual Items</h2>
+        <ul>
+          <li><strong>Google Play Billing:</strong> Optional in-app purchases (such as hint packs or "No Ads" upgrades in <em>Kromatik</em>) are processed exclusively and securely through the official <strong>Google Play Store (Google Play Billing)</strong>.</li>
+          <li><strong>Virtual Goods:</strong> All virtual items, hints, coins, chips, jackpots, and <em>Vault Gold</em> (in <em>Kromatik</em> and <em>Plinkzy</em>) are strictly virtual in-game items with <strong>zero real-world monetary value</strong>. They cannot be exchanged, redeemed, or cashed out for real money, goods, or prizes (No Real-Money Gambling).</li>
+          <li><strong>Refunds:</strong> Refund requests are subject to Google Play Store refund policies and mandatory EU consumer protection laws.</li>
+        </ul>
+
+        <h2>3. Rewarded Video Advertisements</h2>
+        <p><em>Kromatik</em> and <em>Plinkzy</em> offer optional rewarded video advertisements via <strong>Google AdMob</strong> (e.g., watching an ad to receive a free hint or bonus coin drops). <em>Gutzy</em> contains zero advertisements.</p>
+
+        <h2>4. Local Storage &amp; Disclaimers</h2>
+        <ul>
+          <li><strong>On-Device Storage:</strong> Game progress, stars, XP ranks, consumable hint balances, and decision logs are saved locally on your device. Uninstalling the app or clearing local app data may permanently delete local progress. Non-consumable upgrades (such as "No Ads") can be restored via your Google Play account.</li>
+          <li><strong>Gutzy Disclaimer:</strong> <em>Gutzy</em> is a playful reflection tool. Its coin flips, spin wheels, and vintage receipts do not constitute medical, psychological, financial, or legal advice.</li>
+        </ul>
+
+        <h2>5. Intellectual Property &amp; Liability</h2>
+        <p>All code, puzzle designs, visuals, audio, and trademarks (<strong>WAIE</strong>, <strong>Kromatik</strong>, <strong>Plinkzy</strong>, <strong>Gutzy</strong>) are the exclusive property of WAIE Studio. Applications are provided <em>"as is"</em> and <em>"as available"</em>. To the maximum extent permitted by Belgian and EU consumer law, WAIE Studio is not liable for indirect damages or loss of local data.</p>
+
+        <h2>6. Governing Law &amp; Contact</h2>
+        <p>This Agreement is governed by the laws of <strong>Belgium</strong>. For support or legal inquiries, contact WAIE Studio at <a href="mailto:info@waie.be">info@waie.be</a>.</p>
+      `,
+      nl: `
+        <h1>Serviceovereenkomst &amp; Gebruiksvoorwaarden (EULA)</h1>
+        <p><strong>Laatst bijgewerkt:</strong> 5 november 2026<br/>
+        <strong>Ontwikkelaar:</strong> WAIE Studio — Geldig voor <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>) en <strong>Gutzy</strong> (<code>com.gutzy</code>).</p>
+
+        <h2>1. Aanvaarding &amp; Gebruikslicentie</h2>
+        <p>Door het downloaden, installeren of gebruiken van een mobiele applicatie of webdienst van <strong>WAIE Studio</strong> ga je akkoord met deze Serviceovereenkomst. WAIE Studio verleent je een persoonlijke, beperkte, niet-exclusieve, niet-overdraagbare en herroepbare licentie voor persoonlijk, niet-commercieel gebruik op je eigen toestel. Het is niet toegestaan de app te kopiëren, wijzigen, decompileren, reverse-engineeren of te manipuleren met cheats of aangepaste APK's.</p>
+
+        <h2>2. In-App Aankopen &amp; Virtuele Items</h2>
+        <ul>
+          <li><strong>Google Play Billing:</strong> Optionele in-app aankopen (zoals hint-bundels of een "Advertentievrij / No Ads"-upgrade in <em>Kromatik</em>) verlopen uitsluitend en beveiligd via de <strong>Google Play Store (Google Play Billing)</strong>.</li>
+          <li><strong>Virtuele Goederen &amp; Geen Gokken:</strong> Alle virtuele items, hints, munten, fiches, jackpots en <em>Vault Gold</em> (in <em>Kromatik</em> en <em>Plinkzy</em>) zijn puur virtuele in-game elementen <strong>zonder enige echte geldwaarde</strong>. Ze kunnen nooit worden ingewisseld of uitbetaald voor echt geld of prijzen.</li>
+          <li><strong>Terugbetalingen:</strong> Op aankopen zijn het restitutiebeleid van Google Play en het dwingend Europees consumentenrecht van toepassing.</li>
+        </ul>
+
+        <h2>3. Optionele Beloningsadvertenties</h2>
+        <p><em>Kromatik</em> en <em>Plinkzy</em> bieden optionele beloningsvideo's via <strong>Google AdMob</strong> (bijv. een korte video bekijken voor een gratis hint of bonus-drops). <em>Gutzy</em> bevat geen advertenties.</p>
+
+        <h2>4. Lokale Opslag &amp; Disclaimers</h2>
+        <ul>
+          <li><strong>Lokale Toestelopslag:</strong> Spelvoortgang, sterren, XP-rangen, verbruikbare hints en beslissingsnotities worden lokaal op je toestel bewaard. Bij het verwijderen van de app of het wissen van lokale data kan deze voortgang verloren gaan. Permanente upgrades (zoals "No Ads") kunnen via je Google Play-account worden hersteld.</li>
+          <li><strong>Gutzy Disclaimer:</strong> <em>Gutzy</em> is een speelse reflectie- en beslissingstool en vormt geen medisch, psychologisch, financieel of juridisch advies.</li>
+        </ul>
+
+        <h2>5. Intellectueel Eigendom &amp; Aansprakelijkheid</h2>
+        <p>Alle rechten op broncode, puzzelontwerpen, graphics, audio en merknamen (<strong>WAIE</strong>, <strong>Kromatik</strong>, <strong>Plinkzy</strong>, <strong>Gutzy</strong>) berusten bij WAIE Studio. De apps worden geleverd <em>"zoals ze zijn" ("as is")</em>. Voor zover toegestaan onder dwingend Belgisch en Europees recht is WAIE Studio niet aansprakelijk voor indirecte schade of verlies van lokale gegevens.</p>
+
+        <h2>6. Toepasselijk Recht &amp; Contact</h2>
+        <p>Op deze overeenkomst is het <strong>Belgisch recht</strong> van toepassing. Voor vragen of ondersteuning kun je contact opnemen via <a href="mailto:info@waie.be">info@waie.be</a>.</p>
+      `,
+      fr: `
+        <h1>Contrat de Service &amp; Conditions d'Utilisation (CLUF)</h1>
+        <p><strong>Dernière mise à jour :</strong> 5 novembre 2026<br/>
+        <strong>Développeur :</strong> WAIE Studio — Applicable à <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>) et <strong>Gutzy</strong> (<code>com.gutzy</code>).</p>
+
+        <h2>1. Acceptation et Licence d'Utilisation</h2>
+        <p>En téléchargeant ou en utilisant une application de <strong>WAIE Studio</strong>, vous acceptez le présent Contrat de Service. WAIE Studio vous accorde une licence personnelle, limitée, non exclusive, non transférable et révocable pour un usage strictement personnel et non commercial. Il est interdit de copier, modifier, décompiler, rétro-concevoir ou pirater l'application.</p>
+
+        <h2>2. Achats Intégrés et Objets Virtuels</h2>
+        <ul>
+          <li><strong>Google Play Billing :</strong> Les achats intégrés optionnels (tels que les packs d'indices ou l'option « Sans publicité » dans <em>Kromatik</em>) sont traités exclusivement via le système sécurisé du <strong>Google Play Store</strong>.</li>
+          <li><strong>Biens Virtuels :</strong> Tous les indices, pièces, jetons et jackpots virtuels (dans <em>Kromatik</em> et <em>Plinkzy</em>) n'ont <strong>aucune valeur monétaire réelle</strong> et ne peuvent jamais être échangés contre de l'argent réel ou des prix.</li>
+        </ul>
+
+        <h2>3. Publicités Vidéo Récompensées</h2>
+        <p><em>Kromatik</em> et <em>Plinkzy</em> proposent des publicités vidéo optionnelles via <strong>Google AdMob</strong> (pour obtenir un indice gratuit ou des pièces bonus). <em>Gutzy</em> ne contient aucune publicité.</p>
+
+        <h2>4. Stockage Local et Avertissements</h2>
+        <ul>
+          <li><strong>Stockage sur l'Appareil :</strong> La progression, les étoiles et les notes sont stockées localement sur votre appareil. La désinstallation de l'application peut entraîner la perte des données locales.</li>
+          <li><strong>Avertissement Gutzy :</strong> <em>Gutzy</em> est un outil ludique de réflexion et ne constitue en aucun cas un avis médical, psychologique, financier ou juridique.</li>
+        </ul>
+
+        <h2>5. Propriété Intellectuelle et Responsabilité</h2>
+        <p>Tous les droits sur le code, les puzzles, les graphismes et les marques (<strong>WAIE</strong>, <strong>Kromatik</strong>, <strong>Plinkzy</strong>, <strong>Gutzy</strong>) appartiennent exclusivement à WAIE Studio. Les applications sont fournies « en l'état » (<em>as is</em>).</p>
+
+        <h2>6. Droit Applicable et Contact</h2>
+        <p>Ce contrat est régi par le <strong>droit belge</strong>. Contact : <a href="mailto:info@waie.be">info@waie.be</a>.</p>
+      `,
+      es: `
+        <h1>Acuerdo de Servicio y Términos de Uso (EULA)</h1>
+        <p><strong>Última actualización:</strong> 5 de noviembre de 2026<br/>
+        <strong>Desarrollador:</strong> WAIE Studio — Aplicable a <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>) y <strong>Gutzy</strong> (<code>com.gutzy</code>).</p>
+
+        <h2>1. Aceptación y Licencia de Uso</h2>
+        <p>Al descargar o utilizar cualquier aplicación de <strong>WAIE Studio</strong>, aceptas este Acuerdo de Servicio. WAIE Studio te otorga una licencia personal, limitada, no exclusiva, intransferible y revocable para uso personal y no comercial. Queda prohibido copiar, modificar, descompilar, realizar ingeniería inversa o manipular la aplicación mediante trucos o APKs modificados.</p>
+
+        <h2>2. Compras Integradas y Artículos Virtuales</h2>
+        <ul>
+          <li><strong>Google Play Billing:</strong> Las compras opcionales dentro de la aplicación (como paquetes de pistas o el modo «Sin anuncios» en <em>Kromatik</em>) se procesan exclusivamente a través de <strong>Google Play Store</strong>.</li>
+          <li><strong>Artículos Virtuales:</strong> Todas las pistas, monedas, fichas y botes virtuales (en <em>Kromatik</em> y <em>Plinkzy</em>) carecen de <strong>valor monetario real</strong> y nunca pueden canjearse por dinero real ni premios.</li>
+        </ul>
+
+        <h2>3. Anuncios de Vídeo Recompensados</h2>
+        <p><em>Kromatik</em> y <em>Plinkzy</em> ofrecen anuncios de vídeo opcionales mediante <strong>Google AdMob</strong> para obtener pistas gratuitas o tiradas extra. <em>Gutzy</em> no contiene anuncios.</p>
+
+        <h2>4. Almacenamiento Local y Avisos</h2>
+        <ul>
+          <li><strong>Almacenamiento en el Dispositivo:</strong> El progreso del juego, las estrellas y las decisiones se guardan localmente en tu dispositivo. Desinstalar la aplicación puede borrar los datos locales.</li>
+          <li><strong>Aviso sobre Gutzy:</strong> <em>Gutzy</em> es una herramienta lúdica de reflexión y no constituye asesoramiento médico, psicológico, financiero ni legal.</li>
+        </ul>
+
+        <h2>5. Propiedad Intelectual y Responsabilidad</h2>
+        <p>Todos los derechos sobre el código, diseños de puzles, gráficos y marcas (<strong>WAIE</strong>, <strong>Kromatik</strong>, <strong>Plinkzy</strong>, <strong>Gutzy</strong>) pertenecen exclusivamente a WAIE Studio. Las aplicaciones se proporcionan «tal cual» (<em>as is</em>).</p>
+
+        <h2>6. Legislación Aplicable y Contacto</h2>
+        <p>Este acuerdo se rige por las leyes de <strong>Bélgica</strong>. Contacto: <a href="mailto:info@waie.be">info@waie.be</a>.</p>
+      `,
+      de: `
+        <h1>Nutzungsbedingungen &amp; Servicevereinbarung (EULA)</h1>
+        <p><strong>Zuletzt aktualisiert:</strong> 5. November 2026<br/>
+        <strong>Entwickler:</strong> WAIE Studio — Gültig für <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>) und <strong>Gutzy</strong> (<code>com.gutzy</code>).</p>
+
+        <h2>1. Geltung &amp; Lizenzgewährung</h2>
+        <p>Durch das Herunterladen oder Nutzen einer Anwendung von <strong>WAIE Studio</strong> stimmen Sie dieser Servicevereinbarung zu. WAIE Studio gewährt Ihnen eine persönliche, beschränkte, nicht-exklusive, nicht übertragbare und widerrufliche Lizenz zur privaten, nicht-kommerziellen Nutzung. Das Kopieren, Bearbeiten, Dekompilieren, Reverse-Engineering oder Manipulieren der App ist untersagt.</p>
+
+        <h2>2. In-App-Käufe &amp; Virtuelle Güter</h2>
+        <ul>
+          <li><strong>Google Play Billing:</strong> Optionale In-App-Käufe (wie Hinweis-Pakete oder das „Werbefrei / No Ads"-Upgrade in <em>Kromatik</em>) werden ausschließlich über den <strong>Google Play Store</strong> abgewickelt.</li>
+          <li><strong>Virtuelle Gegenstände:</strong> Alle virtuellen Hinweise, Münzen, Chips und Jackpots (in <em>Kromatik</em> und <em>Plinkzy</em>) haben <strong>keinen realen Geldwert</strong> und können niemals gegen Echtgeld oder Sachpreise eingetauscht werden.</li>
+        </ul>
+
+        <h2>3. Optionale Belohnungsvideos</h2>
+        <p><em>Kromatik</em> und <em>Plinkzy</em> bieten optionale Belohnungsvideos über <strong>Google AdMob</strong> an (z. B. für kostenlose Hinweise oder Bonus-Münzen). <em>Gutzy</em> enthält keinerlei Werbung.</p>
+
+        <h2>4. Lokale Speicherung &amp; Haftungsausschluss</h2>
+        <ul>
+          <li><strong>Gerätespeicher:</strong> Spielfortschritt, Sterne und Notizen werden lokal auf Ihrem Gerät gespeichert. Durch das Deinstallieren der App können lokale Spielstände gelöscht werden.</li>
+          <li><strong>Hinweis zu Gutzy:</strong> <em>Gutzy</em> dient ausschließlich der spielerischen Selbstreflexion und stellt keine medizinische, psychologische, finanzielle oder rechtliche Beratung dar.</li>
+        </ul>
+
+        <h2>5. Geistiges Eigentum &amp; Haftung</h2>
+        <p>Alle Rechte an Quellcode, Puzzle-Designs, Grafiken und Marken (<strong>WAIE</strong>, <strong>Kromatik</strong>, <strong>Plinkzy</strong>, <strong>Gutzy</strong>) liegen ausschließlich bei WAIE Studio. Die Bereitstellung erfolgt „wie besehen" (<em>as is</em>).</p>
+
+        <h2>6. Anwendbares Recht &amp; Kontakt</h2>
+        <p>Es gilt das Recht von <strong>Belgien</strong>. Kontakt: <a href="mailto:info@waie.be">info@waie.be</a>.</p>
+      `
+    };
+
+    function setLang(lang, btn) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      document.documentElement.lang = lang;
+      document.getElementById('termsContent').innerHTML = TERMS[lang] || TERMS.en;
+    }
+
+    const browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    const initialLang = TERMS[browserLang] ? browserLang : 'en';
+    const initialBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.getAttribute('onclick').includes("'" + initialLang + "'"));
+    setLang(initialLang, initialBtn || document.querySelector('.lang-btn'));
+  </script>
+</body>
+</html>
