@@ -150,7 +150,7 @@
         </a>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span class="badge">100% OFFLINE • 0 TRACKERS</span>
+        <span class="badge">GDPR COMPLIANT • NO ACCOUNT REQUIRED</span>
         <a href="/privacy.html" class="lang-switch-btn" title="Lees in het Nederlands" style="padding: 4px 10px; font-size: 12px;">
           <span>🇳🇱</span> NL
         </a>
@@ -158,14 +158,14 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <div class="meta">Applicable to Kromatik (com.waie.kromatik), Plinkzy (com.waie.dropzy) &amp; Gutzy (com.gutzy) • Last updated: October 28, 2026</div>
+    <div class="meta">Applicable to Kromatik (com.waie.kromatik), Plinkzy (com.waie.dropzy) &amp; Gutzy (com.gutzy) • Last updated: November 18, 2026</div>
 
     <p>
       This Privacy Policy applies to the mobile applications <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Gutzy</strong> (<code>com.gutzy</code>, including earlier test versions under the working title <em>Decido</em>) and <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>, formerly known under the working title <em>Dropzy</em>) and all related services provided by <strong>WAIE Studio</strong> ("we", "our", or "the developer").
     </p>
 
     <div class="legal-box">
-      <strong>In short:</strong> We never require user accounts and never sell personal data. All progress, decisions, and settings are stored locally on your own device.
+      <strong>In short:</strong> We never require personal user accounts (no real name, email address, or phone number required) and never sell personal data. Progress and settings are stored on your own device and, for <strong>Kromatik</strong>, additionally synchronized anonymously under a randomly generated Player ID (<code>playerUid</code>) in our European database (<code>eur3</code>).
       <div style="margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="#kromatik-privacy" style="color: #4F46E5; font-weight: 800;">➔ Jump to Kromatik (Puzzle Game)</a>
         <a href="#gutzy-privacy" style="color: #4F46E5; font-weight: 800;">➔ Jump to Gutzy (100% Offline)</a>
@@ -221,14 +221,24 @@
       <li><strong>Target Audience (Plinkzy):</strong> Plinkzy is intended for a general audience (13+) and does not knowingly collect personal information from children under the age of 13.</li>
     </ul>
 
-    <h2 id="kromatik-privacy">6. Kromatik (com.waie.kromatik) — Specific Privacy Terms</h2>
+    <h2 id="kromatik-privacy">6. Kromatik (com.waie.kromatik) — Specific Privacy Terms &amp; Anonymous Player Database</h2>
     <p>
-      <strong>Kromatik</strong> (package ID: <code>com.waie.kromatik</code>) is an optical color and laser puzzle game. The following specific terms apply to Kromatik:
+      <strong>Kromatik</strong> (package ID: <code>com.waie.kromatik</code>) is an optical color and laser puzzle game. The following specific privacy and data processing terms apply to Kromatik (in accordance with the EU GDPR):
     </p>
     <ul>
-      <li><strong>No Account Required &amp; Local On-Device Storage:</strong> Kromatik does not require a user account, name, email address, or phone number. All game progress (completed levels, earned stars, XP rank, hint balance, language preference, and sound settings) is stored exclusively locally on your own Android device via <code>SharedPreferences</code>.</li>
-      <li><strong>Optional Rewarded Advertising (Google AdMob):</strong> On mobile devices, Kromatik uses <strong>Google AdMob</strong> to offer optional rewarded video advertisements (for example, when you voluntarily choose to watch a short video ad to receive a free hint). Google AdMob may automatically process device identifiers (such as the Android Advertising ID / <code>AD_ID</code>), coarse location (derived from IP address) for ad relevance and fraud prevention, and ad performance diagnostics over encrypted HTTPS connections. You can reset or delete your Advertising ID at any time in your device settings (<em>Settings ➔ Google ➔ Ads</em>).</li>
-      <li><strong>In-App Purchases (Google Play Billing):</strong> Optional in-app purchases (such as hint packs or "No Ads") are processed exclusively and directly through the secure payment system of the <strong>Google Play Store (Google Play Billing)</strong>. WAIE Studio never receives or stores your payment card details.</li>
+      <li><strong>No Personal Account Required:</strong> Kromatik does not require mandatory registration and never asks for your real name, email address, phone number, home address, or password.</li>
+      <li><strong>Anonymous Player Database &amp; Cloud Synchronization (Google Firebase Cloud Firestore <code>eur3</code>):</strong> To safeguard your gameplay progress and enable cross-device restoration without mandatory registration, Kromatik automatically generates a random, anonymous Player ID (<code>playerUid</code>, e.g., <code>kr_...</code>). Your gameplay data is stored locally on your device (<code>SharedPreferences</code> / <code>localStorage</code>) and synchronized under this anonymous <code>playerUid</code> to our European <strong>Google Firebase Cloud Firestore</strong> database (region <code>eur3</code> — European Union). The anonymously stored fields consist strictly of:
+        <ul style="margin-top: 8px; margin-bottom: 8px;">
+          <li><strong>In-game profile preferences:</strong> Your chosen in-game nickname (<code>playerName</code>), selected avatar icon (<code>avatar</code>), language preference (<code>language</code>), and active board/laser skin (<code>activeSkin</code>);</li>
+          <li><strong>Gameplay progress:</strong> Highest level reached (<code>highestLevel</code>), number of completed levels (<code>levelsCompleted</code>), current world (<code>currentWorld</code>), total earned stars (<code>totalStars</code>), experience points (<code>xp</code>), and perfect level streak (<code>perfectStreak</code>);</li>
+          <li><strong>Virtual balances &amp; entitlements:</strong> Balance of Prism Crystals 💎 (<code>crystals</code>), available boosters (<code>hintsLeft</code>, <code>novaLeft</code> / 2× Ring Poppers, and <code>breakerLeft</code> / Mine Breakers), Royal Pass / PRO unlock status (<code>isPro</code>), and customer-support crystal grants (<code>adminGiftCrystals</code>);</li>
+          <li><strong>Technical metadata:</strong> Application version (<code>appVersion</code>), platform type (<code>android_app</code> or <code>web_browser</code>), and timestamp of last synchronization (<code>lastActiveIso</code>).</li>
+        </ul>
+      </li>
+      <li><strong>Anonymous Game Analytics (Google Firebase Analytics):</strong> We use <strong>Google Firebase Analytics</strong> on an aggregated and anonymized level to understand level progression, optimize puzzle difficulty and balance, monitor app stability, and measure aggregate in-app purchase conversion events.</li>
+      <li><strong>Optional Rewarded Video Advertising (Google AdMob with UMP Consent):</strong> Kromatik never interrupts puzzles with forced pop-up ads. Players may voluntarily choose to watch short rewarded video advertisements (via <strong>Google AdMob</strong>, including the Google UMP GDPR consent form in the EEA/UK) to earn free Prism Crystals, hints, or extra moves. Google AdMob may process device identifiers (such as the Android Advertising ID / <code>AD_ID</code>), coarse location (derived from IP address) for ad relevance and fraud prevention, and ad performance diagnostics over encrypted HTTPS connections. With the <em>Royal Pass / PRO</em> upgrade or when you do not start rewarded videos, no ads are shown. You can reset or delete your Advertising ID at any time in your device settings (<em>Settings ➔ Google ➔ Ads</em>).</li>
+      <li><strong>In-App Purchases (Google Play Billing):</strong> Optional in-app purchases (such as the <em>Royal Pass / PRO</em>, <em>Power Bundle</em>, or <em>Prism Crystal Packs</em>) are processed exclusively and directly through the secure payment system of the <strong>Google Play Store (Google Play Billing)</strong>. WAIE Studio never receives or stores your payment card details.</li>
+      <li><strong>Your GDPR Rights (Access, Portability &amp; Deletion):</strong> We never sell data to third parties. You can view and copy your anonymous Player ID (<code>playerUid</code>) at any time directly inside the app (via the Player Profile or <em>Settings ➔ Privacy Policy &amp; Terms</em>) to restore your progress on another device. Furthermore, you can request access to or permanent deletion of your anonymous player profile from our cloud database at any time by emailing <a href="mailto:info@waie.be" style="color:#4F46E5; font-weight:700;">info@waie.be</a> quoting your Player ID (<code>playerUid</code>).</li>
     </ul>
 
     <h2>7. Studio Information &amp; Contact</h2>

@@ -152,7 +152,7 @@
         </a>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span class="badge">100% OFFLINE • 0 TRACKERS</span>
+        <span class="badge">AVG / GDPR CONFORM • GEEN ACCOUNT VEREIST</span>
         <a href="/en/privacy.html" class="lang-switch-btn" title="Read in English" style="padding: 4px 10px; font-size: 12px;">
           <span>🇬🇧</span> EN
         </a>
@@ -160,14 +160,14 @@
     </div>
 
     <h1>Privacybeleid (Privacy Policy)</h1>
-    <div class="meta">Geldig voor Kromatik (com.waie.kromatik), Plinkzy (com.waie.dropzy) &amp; Gutzy (com.gutzy) • Laatst bijgewerkt: 28 oktober 2026</div>
+    <div class="meta">Geldig voor Kromatik (com.waie.kromatik), Plinkzy (com.waie.dropzy) &amp; Gutzy (com.gutzy) • Laatst bijgewerkt: 18 november 2026</div>
 
     <p>
       Dit privacybeleid is van toepassing op de mobiele applicaties <strong>Kromatik</strong> (<code>com.waie.kromatik</code>), <strong>Gutzy</strong> (<code>com.gutzy</code>, inclusief eerdere testversies onder de werknaam <em>Decido</em>) en <strong>Plinkzy</strong> (<code>com.waie.dropzy</code>, voorheen bekend onder de werknaam <em>Dropzy</em>) en alle aanverwante diensten van <strong>WAIE Studio</strong> ("wij", "onze" of "de ontwikkelaar").
     </p>
 
     <div class="legal-box">
-      <strong>Kort samengevat:</strong> Wij verplichten nooit gebruikersaccounts en verkopen nooit persoonsgegevens. Alle voortgang, keuzes en instellingen worden lokaal op jouw eigen apparaat bewaard.
+      <strong>Kort samengevat:</strong> Wij verplichten nooit persoonlijke gebruikersaccounts (geen echte naam, e-mailadres of telefoonnummer nodig) en verkopen nooit persoonsgegevens. Voortgang en instellingen worden op je eigen toestel bewaard en voor <strong>Kromatik</strong> daarnaast anoniem gesynchroniseerd via een willekeurig gegenereerd Spelers-ID (<code>playerUid</code>) in onze Europese database (<code>eur3</code>).
       <div style="margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="#kromatik-privacy" style="color: #4F46E5; font-weight: 800;">➔ Spring naar Kromatik (Puzzel Game)</a>
         <a href="#gutzy-privacy" style="color: #4F46E5; font-weight: 800;">➔ Spring naar Gutzy (100% Offline)</a>
@@ -223,14 +223,24 @@
       <li><strong>Leeftijdsgroep (Plinkzy):</strong> Plinkzy is bedoeld voor een algemeen publiek (13+) en verzamelt niet bewust persoonsgegevens van kinderen onder de 13 jaar.</li>
     </ul>
 
-    <h2 id="kromatik-privacy">6. Kromatik (com.waie.kromatik) — Specifiek Privacybeleid</h2>
+    <h2 id="kromatik-privacy">6. Kromatik (com.waie.kromatik) — Specifiek Privacybeleid &amp; Anonieme Spelersdatabase</h2>
     <p>
-      <strong>Kromatik</strong> (package ID: <code>com.waie.kromatik</code>) is een optisch kleur- en laserpuzzelspel. Voor Kromatik gelden de volgende specifieke bepalingen:
+      <strong>Kromatik</strong> (package ID: <code>com.waie.kromatik</code>) is een optisch kleur- en laserpuzzelspel. Voor Kromatik gelden de volgende specifieke privacy- en gegevensbepalingen (conform de Europese AVG / GDPR):
     </p>
     <ul>
-      <li><strong>Geen account vereist &amp; Lokale opslag:</strong> Kromatik vereist geen gebruikersaccount, naam, e-mailadres of telefoonnummer. Alle spelvoortgang (zoals voltooide levels, behaalde sterren, XP-rang, hint-saldo, taalvoorkeur en geluidsinstellingen) wordt uitsluitend lokaal op jouw eigen Android-toestel opgeslagen via <code>SharedPreferences</code>.</li>
-      <li><strong>Optionele Beloningsadvertenties (Google AdMob):</strong> Op mobiele toestellen gebruikt Kromatik <strong>Google AdMob</strong> om optionele beloningsvideo's (rewarded video ads) aan te bieden (bijvoorbeeld wanneer je er zelf voor kiest een korte advertentie te bekijken om een gratis hint te ontvangen). Google AdMob kan daarbij automatisch apparaat-identificatoren (zoals het Android Advertising ID / <code>AD_ID</code>), globale locatie op basis van IP-adres voor advertentierelevantie en fraudepreventie, en diagnostische advertentiegegevens verwerken via een versleutelde HTTPS-verbinding. Indien je de "No Ads"-upgrade aanschaft of geen beloningsvideo's start, worden er geen advertenties getoond. Je kunt je advertentie-ID op elk moment resetten of verwijderen via de systeeminstellingen van je toestel (<em>Instellingen ➔ Google ➔ Advertenties</em>).</li>
-      <li><strong>In-app aankopen (Google Play Billing):</strong> Eventuele optionele aankopen in de app (zoals hint-pakketten of "No Ads") verlopen uitsluitend en rechtstreeks via het beveiligde betalingssysteem van de <strong>Google Play Store (Google Play Billing)</strong>. WAIE Studio ontvangt of bewaart nooit jouw betaal- of creditcardgegevens.</li>
+      <li><strong>Geen persoonlijk account vereist:</strong> Kromatik verplicht geen registratie en vraagt nooit om je echte naam, e-mailadres, telefoonnummer, woonadres of wachtwoord.</li>
+      <li><strong>Anonieme Spelers-Database &amp; Cloud-Synchronisatie (Google Firebase Cloud Firestore <code>eur3</code>):</strong> Om je spelvoortgang veilig te bewaren en overdraagbaar te maken zonder verplichte accountregistratie, genereert Kromatik automatisch een willekeurig, anoniem Spelers-ID (<code>playerUid</code>, bijvoorbeeld <code>kr_...</code>). Je spelgegevens worden lokaal op je toestel (<code>SharedPreferences</code> / <code>localStorage</code>) opgeslagen én onder dit anonieme <code>playerUid</code> gesynchroniseerd met onze Europese <strong>Google Firebase Cloud Firestore</strong>-database (regio <code>eur3</code> — Europese Unie). De anoniem opgeslagen gegevens omvatten uitsluitend:
+        <ul style="margin-top: 8px; margin-bottom: 8px;">
+          <li><strong>In-game profielkeuzes:</strong> Je zelfgekozen in-game bijnaam (<code>playerName</code>), gekozen avatar-icoon (<code>avatar</code>), taalvoorkeur (<code>language</code>) en actieve speelveld-/laserskin (<code>activeSkin</code>);</li>
+          <li><strong>Spelvoortgang:</strong> Hoogst bereikte level (<code>highestLevel</code>), aantal voltooide levels (<code>levelsCompleted</code>), huidige wereld (<code>currentWorld</code>), totaal behaalde sterren (<code>totalStars</code>), ervaringspunten (<code>xp</code>) en reeks perfecte levels (<code>perfectStreak</code>);</li>
+          <li><strong>Virtuele balansen &amp; status:</strong> Saldo aan Prisma-Kristallen 💎 (<code>crystals</code>), beschikbare boosters (<code>hintsLeft</code>, <code>novaLeft</code> / 2× Ring-Poppers en <code>breakerLeft</code> / Mijn-Brekers), Royal Pass / PRO-status (<code>isPro</code>) en eventuele klantenservice-kristalbonussen (<code>adminGiftCrystals</code>);</li>
+          <li><strong>Technische metadata:</strong> App-versie (<code>appVersion</code>), platformtype (<code>android_app</code> of <code>web_browser</code>) en tijdstip van laatste synchronisatie (<code>lastActiveIso</code>).</li>
+        </ul>
+      </li>
+      <li><strong>Anonieme Spelstatistieken (Google Firebase Analytics):</strong> Wij gebruiken <strong>Google Firebase Analytics</strong> om op geaggregeerd en geanonimiseerd niveau te analyseren tot welk level spelers komen, om de moeilijkheidsgraad en balans van de puzzels te verbeteren, de stabiliteit van de app te waarborgen en in-app aankoopgebeurtenissen op geaggregeerd niveau te meten.</li>
+      <li><strong>Optionele Beloningsadvertenties (Google AdMob met UMP-toestemming):</strong> Kromatik onderbreekt puzzels nooit met verplichte pop-upadvertenties. Spelers kunnen er vrijwillig voor kiezen een korte beloningsvideo (via <strong>Google AdMob</strong>, inclusief het Google UMP GDPR-toestemmingsformulier in de EER/VK) te bekijken voor gratis Prisma-Kristallen, hints of extra zetten. Google AdMob kan daarbij apparaat-identificatoren (zoals het Android Advertising ID / <code>AD_ID</code>), globale locatie op basis van IP-adres voor advertentierelevantie en fraudepreventie, en diagnostische advertentiegegevens verwerken via een versleutelde HTTPS-verbinding. Met de <em>Royal Pass / PRO</em>-upgrade of wanneer je geen beloningsvideo's start, worden er geen advertenties geladen. Je kunt je advertentie-ID op elk moment resetten of verwijderen via de systeeminstellingen van je toestel (<em>Instellingen ➔ Google ➔ Advertenties</em>).</li>
+      <li><strong>In-app aankopen (Google Play Billing):</strong> Optionele aankopen in de app (zoals de <em>Royal Pass / PRO</em>, de <em>Power Bundel</em> of <em>Prisma-Kristallen</em>) verlopen uitsluitend en rechtstreeks via het beveiligde betalingssysteem van de <strong>Google Play Store (Google Play Billing)</strong>. WAIE Studio ontvangt of bewaart nooit jouw betaal- of creditcardgegevens.</li>
+      <li><strong>Jouw AVG-rechten (Inzage, Overdracht &amp; Verwijdering):</strong> Wij verkopen nooit gegevens aan derden. Je kunt jouw anonieme Spelers-ID (<code>playerUid</code>) op elk moment in de app bekijken en kopiëren (via het Spelersprofiel of <em>Instellingen ➔ Privacy &amp; Voorwaarden</em>) om je voortgang op een ander toestel te herstellen. Daarnaast kun je op elk moment volledige inzage of permanente verwijdering van je anonieme spelersprofiel uit onze cloud-database aanvragen door een e-mail te sturen naar <a href="mailto:info@waie.be" style="color:#4F46E5; font-weight:700;">info@waie.be</a> onder vermelding van je Spelers-ID (<code>playerUid</code>).</li>
     </ul>
 
     <h2>7. Studio-informatie &amp; Contact</h2>
