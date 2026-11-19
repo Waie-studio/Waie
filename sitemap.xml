@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://waie.be/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waie.be/"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://waie.be/"/>
+  </url>
+  <url>
+    <loc>https://waie.be/kromatik.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/kromatik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/kromatik.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/kromatik.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/kromatik.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/kromatik.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/privacy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/privacy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/terms.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/terms.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/service-agreement.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://waie.be/plinkzy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/plinkzy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/plinkzy.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/plinkzy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/plinkzy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/plinkzy.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/gutzy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/gutzy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/gutzy.html"/>
+  </url>
+  <url>
+    <loc>https://waie.be/en/gutzy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://waie.be/gutzy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waie.be/en/gutzy.html"/>
+  </url>
+</urlset>
